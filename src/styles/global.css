@@ -3,47 +3,98 @@
 
 @plugin '@tailwindcss/typography';
 
+/* Geist Sans — Regular, Medium, Bold */
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts-geist/geist-sans/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts-geist/geist-sans/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts-geist/geist-sans/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist Mono — Regular, Medium, Bold */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts-geist/geist-mono/GeistMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts-geist/geist-mono/GeistMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts-geist/geist-mono/GeistMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * Astro SEO Theme — Base Styles
  * Design system inspired by Linear, Vercel, Stripe.
  */
 
 @theme {
-  /* Brand Colors (Indigo - Lighter & More Vibrant) */
-  --color-primary-50: oklch(0.98 0.02 275);
-  --color-primary-100: oklch(0.95 0.04 275);
-  --color-primary-200: oklch(0.88 0.08 275);
-  --color-primary-300: oklch(0.8 0.12 275);
-  --color-primary-400: oklch(0.7 0.18 275);
-  --color-primary-500: oklch(0.6 0.22 275);
-  --color-primary-600: oklch(0.52 0.2 275);
-  --color-primary-700: oklch(0.45 0.16 275);
-  --color-primary-800: oklch(0.38 0.12 275);
-  --color-primary-900: oklch(0.3 0.09 275);
-  --color-primary-950: oklch(0.2 0.06 275);
+  /* CALCIO Brand Colors */
+  /* Green primary: #1D9C58 */
+  --color-primary-50: #F0F8F4;
+  --color-primary-100: #C5E8D8;
+  --color-primary-200: #A7D7C5;
+  --color-primary-300: #6EBF97;
+  --color-primary-400: #35A778;
+  --color-primary-500: #1D9C58;
+  --color-primary-600: #1B8C50;
+  --color-primary-700: #187C48;
+  --color-primary-800: #156C40;
+  --color-primary-900: #0D4428;
+  --color-primary-950: #082B1A;
 
-  /* Neutral/Gray — Zinc-inspired with slight indigo tint for softer background */
-  --color-surface-50: oklch(0.985 0.005 275);
-  --color-surface-100: oklch(0.96 0.01 275);
-  --color-surface-200: oklch(0.92 0.01 275);
-  --color-surface-300: oklch(0.87 0.01 275);
-  --color-surface-400: oklch(0.71 0.01 275);
-  --color-surface-500: oklch(0.55 0.01 275);
-  --color-surface-600: oklch(0.45 0.01 275);
-  --color-surface-700: oklch(0.37 0.01 275);
-  --color-surface-800: oklch(0.27 0.01 275);
-  --color-surface-900: oklch(0.21 0.01 275);
-  --color-surface-950: oklch(0.14 0.01 275);
+  /* Neutral/Paper: #F4F4F4 (backgrounds), Ink: #1C1C1C (text) */
+  --color-surface-50: #FAFAFA;
+  --color-surface-100: #F4F4F4;
+  --color-surface-200: #EEEEEE;
+  --color-surface-300: #E4E4E4;
+  --color-surface-400: #BFBFBF;
+  --color-surface-500: #999999;
+  --color-surface-600: #666666;
+  --color-surface-700: #4D4D4D;
+  --color-surface-800: #2D2D2D;
+  --color-surface-900: #1C1C1C;
+  --color-surface-950: #0A0A0A;
 
-  /* Accent — For CTAs and highlights */
-  --color-accent-400: oklch(0.75 0.18 160);
-  --color-accent-500: oklch(0.65 0.22 160);
-  --color-accent-600: oklch(0.55 0.2 160);
+  /* Accent — Yellow: #F5C063 for highlights */
+  --color-accent-400: #F7D896;
+  --color-accent-500: #F5C063;
+  --color-accent-600: #E8B545;
 
-  /* Typography */
-  --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --font-display: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Typography: Geist Sans + Geist Mono */
+  --font-sans: 'Geist Sans', 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-display: 'Geist Sans', 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 /* ================================================
