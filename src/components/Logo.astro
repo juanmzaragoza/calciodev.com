@@ -1,47 +1,37 @@
 ---
 /**
- * Logo.astro — CALCIO brand logo (flexible: SVG or text fallback)
+ * Logo.astro — CALCIO brand logo (SVG + text fallback)
  *
  * Usage:
- * <Logo variant="full" /> → "C" icon + "CALCIO"
- * <Logo variant="mark" /> → "C" icon only
- * <Logo variant="text" /> → "CALCIO" text only
- *
- * When logo SVG is placed in src/assets/logos/:
- * - calcio-logo-full.svg → includes icon + text
- * - calcio-logo-mark.svg → icon only
- *
- * For now: fallback to typographic "CALCIO" in green
+ * <Logo variant="full" /> → Full logo from SVG
+ * <Logo variant="text" /> → "CALCIO" text only (fallback)
  */
 
+import logoSvg from '../assets/logos/calcio-logo.svg';
+
 interface Props {
-  variant?: 'full' | 'mark' | 'text';
+  variant?: 'full' | 'text';
   className?: string;
   width?: number;
   height?: number;
 }
 
-const { variant = 'full', className = '', width, height } = Astro.props;
-
-// TODO(calcio): Replace with actual SVG from Drive
-// Placeholder: text-based logo
+const { variant = 'full', className = '', width = 160, height = 40 } = Astro.props;
 ---
 
-{variant === 'mark' && (
-  <span class={`inline-block font-bold text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)] ${className}`}>
-    <span style="font-size: 1.75rem; line-height: 1;">C</span>
-  </span>
+{variant === 'full' && (
+  <img
+    src={logoSvg}
+    alt="CALCIO"
+    width={width}
+    height={height}
+    class={`h-auto max-h-8 w-auto ${className}`}
+    loading="lazy"
+  />
 )}
 
 {variant === 'text' && (
   <span class={`font-bold text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)] ${className}`}>
     CALCIO
-  </span>
-)}
-
-{variant === 'full' && (
-  <span class={`inline-flex items-center gap-2 font-bold text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)] ${className}`}>
-    <span style="font-size: 1.75rem; line-height: 1;">C</span>
-    <span>CALCIO</span>
   </span>
 )}
