@@ -1,30 +1,24 @@
 ---
 /**
- * Logo.astro — CALCIO brand logo (SVG + text fallback)
+ * Logo.astro — CALCIO brand logo (SVG from public folder)
  *
  * Usage:
- * <Logo variant="full" /> → Full logo from SVG
- * <Logo variant="text" /> → "CALCIO" text only (fallback)
+ * <Logo variant="full" /> → Full logo SVG
+ * <Logo variant="text" /> → "CALCIO" text fallback
  */
-
-import logoSvg from '../assets/logos/calcio-logo.svg';
 
 interface Props {
   variant?: 'full' | 'text';
   className?: string;
-  width?: number;
-  height?: number;
 }
 
-const { variant = 'full', className = '', width = 160, height = 40 } = Astro.props;
+const { variant = 'full', className = '' } = Astro.props;
 ---
 
 {variant === 'full' && (
   <img
-    src={logoSvg}
+    src="/logos/calcio-logo.svg"
     alt="CALCIO"
-    width={width}
-    height={height}
     class={`h-auto max-h-8 w-auto ${className}`}
     loading="lazy"
   />
