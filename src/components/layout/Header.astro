@@ -8,10 +8,10 @@
  * - Dark mode toggle (React Island)
  * - Language picker (i18n)
  * - Active link highlighting
- * - Megamenu support (hover on desktop, accordion on mobile)
  */
 import DarkModeToggle from '../ui/DarkModeToggle.tsx';
 import LanguagePicker from '../ui/LanguagePicker.astro';
+import Logo from '../Logo.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -42,10 +42,9 @@ const navItems = [
     <a
       href={getLocalizedPath(lang, '/')}
       class="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight"
+      aria-label="CALCIO — Home"
     >
-      <span class="text-[var(--color-primary-500)] dark:text-[var(--color-primary-400)]">
-        CALCIO
-      </span>
+      <Logo variant="text" />
     </a>
 
     <!-- Desktop Navigation -->

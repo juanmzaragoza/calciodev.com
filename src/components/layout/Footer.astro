@@ -2,6 +2,7 @@
 /**
  * Footer.astro — Site footer with navigation columns and social links
  */
+import Logo from '../Logo.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -35,10 +36,9 @@ const footerColumns = [
         <a
           href={getLocalizedPath(lang, '/')}
           class="flex items-center gap-2 font-display text-lg font-bold"
+          aria-label="CALCIO — Home"
         >
-          <span class="text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]">
-            CALCIO
-          </span>
+          <Logo variant="text" />
         </a>
         <p class="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
           Your company grew. Your systems didn't. We fix that.
