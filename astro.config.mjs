@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-seo-theme.vercel.app',
+  site: 'https://calciodev.com',
   output: 'static',
 
   i18n: {
@@ -31,7 +31,7 @@ export default defineConfig({
         defaultLocale: 'en',
         locales: {
           en: 'en-US',
-          es: 'es-ES',
+          es: 'es',
         },
       },
     }),

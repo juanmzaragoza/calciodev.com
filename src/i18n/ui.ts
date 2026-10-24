@@ -20,18 +20,9 @@ export type Lang = keyof typeof languages;
 export const ui = {
   en: {
     // Navigation
-    'nav.product': 'Product',
-    'nav.resources': 'Resources',
-    'nav.features': 'Features',
-    'nav.featuresDesc': 'Learn about our core capabilities.',
-    'nav.pricing': 'Pricing',
-    'nav.pricingDesc': 'Simple and transparent pricing.',
-    'nav.blog': 'Blog',
-    'nav.blogDesc': 'Latest news and industry insights.',
+    'nav.services': 'Services',
     'nav.caseStudies': 'Case Studies',
-    'nav.caseStudiesDesc': 'See how other companies succeed.',
-    'nav.docs': 'Documentation',
-    'nav.docsDesc': 'Guides, tutorials, and API reference.',
+    'nav.blog': 'Blog',
     'nav.about': 'About',
     'nav.contact': 'Contact',
 
@@ -53,15 +44,7 @@ export const ui = {
     'faq.description': 'Everything you need to know about the product and billing.',
 
     // Footer
-    'footer.product': 'Product',
-    'footer.resources': 'Resources',
-    'footer.company': 'Company',
-    'footer.documentation': 'Documentation',
-    'footer.rssFeed': 'RSS Feed',
-    'footer.license': 'License (MIT)',
-    'footer.copyright':
-      'Astro SEO Theme Crafted by <a href="https://davidrueda.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">druedaro</a>.',
-    'footer.builtWith': 'Built with',
+    'footer.copyright': 'CALCIO DEV LLC · Registered in New Mexico, USA',
     'footer.privacyPolicy': 'Privacy Policy',
     'footer.termsOfService': 'Terms of Service',
 
@@ -95,19 +78,10 @@ export const ui = {
   },
   es: {
     // Navigation
-    'nav.product': 'Producto',
-    'nav.resources': 'Recursos',
-    'nav.features': 'Características',
-    'nav.featuresDesc': 'Descubre nuestras funciones principales.',
-    'nav.pricing': 'Precios',
-    'nav.pricingDesc': 'Planes simples y transparentes.',
+    'nav.services': 'Servicios',
+    'nav.caseStudies': 'Casos de Estudio',
     'nav.blog': 'Blog',
-    'nav.blogDesc': 'Últimas noticias y artículos.',
-    'nav.caseStudies': 'Casos de Éxito',
-    'nav.caseStudiesDesc': 'Mira cómo otras empresas tienen éxito.',
-    'nav.docs': 'Documentación',
-    'nav.docsDesc': 'Guías, tutoriales y referencia.',
-    'nav.about': 'Nosotros',
+    'nav.about': 'Sobre Nosotros',
     'nav.contact': 'Contacto',
 
     // Hero
@@ -128,15 +102,7 @@ export const ui = {
     'faq.description': 'Todo lo que necesitas saber sobre el producto y la facturación.',
 
     // Footer
-    'footer.product': 'Producto',
-    'footer.resources': 'Recursos',
-    'footer.company': 'Empresa',
-    'footer.documentation': 'Documentación',
-    'footer.rssFeed': 'Feed RSS',
-    'footer.license': 'Licencia (MIT)',
-    'footer.copyright':
-      'Astro SEO Theme Creado por <a href="https://davidrueda.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">druedaro</a>.',
-    'footer.builtWith': 'Hecho con',
+    'footer.copyright': 'CALCIO DEV LLC · Registrada en New Mexico, EE.UU.',
     'footer.privacyPolicy': 'Política de Privacidad',
     'footer.termsOfService': 'Términos de Servicio',
 
