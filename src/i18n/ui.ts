@@ -47,6 +47,7 @@ export const ui = {
     'footer.copyright': 'CALCIO DEV LLC · Registered in New Mexico, USA',
     'footer.privacyPolicy': 'Privacy Policy',
     'footer.termsOfService': 'Terms of Service',
+    'footer.builtWith': 'Built with',
 
     // Contact Page
     'contact.title': "Let's talk about your project",
@@ -105,6 +106,7 @@ export const ui = {
     'footer.copyright': 'CALCIO DEV LLC · Registrada en New Mexico, EE.UU.',
     'footer.privacyPolicy': 'Política de Privacidad',
     'footer.termsOfService': 'Términos de Servicio',
+    'footer.builtWith': 'Construido con',
 
     // Contact Page
     'contact.title': 'Hablemos de tu proyecto',
