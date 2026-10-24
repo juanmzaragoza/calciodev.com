@@ -1,0 +1,42 @@
+---
+title: 'Una plataforma de datos multi-cliente donde cada uno ve solo lo suyo'
+description: 'Construimos el backend de una plataforma B2B de datos multi-cliente — NestJS, SSO, Superset embebido con aislamiento por cliente — y su migración mayor.'
+pubDate: 2025-05-10
+client: 'Una plataforma B2B de datos multi-cliente'
+industry: 'Datos y Analytics'
+results:
+  - metric: 'Upgrade de Superset'
+    value: '4.1 → 6.1'
+    description: 'Tres versiones mayores actualizadas en 30 días.'
+  - metric: 'Migración segura'
+    value: '~4.400 archivos'
+    description: 'Archivos mergeados; 3 features perdidas en silencio detectadas por checks automáticos.'
+  - metric: 'Aislamiento'
+    value: '3 clientes'
+    description: 'Tres clientes aislados en producción, cada uno viendo solo sus datos.'
+tags: ['analytics embebido', 'nestjs', 'superset', 'multi-cliente', 'bi']
+draft: false
+---
+
+## Contexto
+
+Una plataforma B2B de datos necesitaba darle a cada uno de sus clientes una vista de sus propios datos — dashboards, reportes y agentes de datos con IA — sin construir un reporte distinto por cada cliente.
+
+## El problema
+
+Servir analytics a múltiples clientes de negocio desde una sola plataforma exige un aislamiento estricto: cada cliente debe ver solo sus datos, y los de nadie más. Hacerlo manteniendo una infraestructura compartida y actualizable es donde se traban la mayoría de los equipos.
+
+## Qué hicimos
+
+- Construimos el **backend en NestJS** (en producción desde mayo de 2024), con Next.js en el front y PostgreSQL debajo.
+- Agregamos **SSO con varios proveedores corporativos** y control de acceso por roles (RBAC).
+- Embebimos **Apache Superset con aislamiento por cliente**, más agentes de datos con IA.
+- Ejecutamos una **migración mayor del fork de Superset** — tres versiones mayores (4.1 → 6.1) en 30 días. Los checks automáticos detectaron tres features que, de otro modo, se habrían perdido en silencio entre ~4.400 archivos mergeados.
+
+## Resultado
+
+Tres clientes aislados en producción, cada uno viendo solo sus datos, sobre una plataforma que todavía se puede actualizar de forma segura.
+
+## Stack
+
+NestJS · Next.js · PostgreSQL · Apache Superset · SSO · RBAC

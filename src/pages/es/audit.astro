@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+
+const title = 'Auditoría de Arquitectura & Deuda Técnica — CALCIO';
+const description = 'Una auditoría de dos semanas y alcance fijo de tu arquitectura, seguridad, testing, CI/CD y escalabilidad — con un roadmap priorizado. USD 4.000–6.000, acreditable.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="bg-[var(--bg)] pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">La oferta ancla</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mt-3 mb-6">
+        Auditoría de Arquitectura & Deuda Técnica
+      </h1>
+      <p class="text-lg text-[var(--text-secondary)] mb-8">
+        Dos semanas. Alcance fijo. Un mapa completo de qué está roto y un roadmap priorizado para arreglarlo — antes de comprometerte con un proyecto más grande.
+      </p>
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
+        Reservar Llamada (30 min)
+      </a>
+    </div>
+  </section>
+
+  <!-- Price + duration strip -->
+  <section class="border-t border-b border-[var(--border)] bg-[var(--bg-secondary)] py-8">
+    <div class="mx-auto max-w-4xl px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)] mb-1">Duración</p>
+        <p class="text-2xl font-bold text-[var(--text-primary)]">2 semanas</p>
+      </div>
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)] mb-1">Inversión</p>
+        <p class="text-2xl font-bold text-[var(--color-primary-600)]">USD 4.000–6.000</p>
+      </div>
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)] mb-1">La tarifa</p>
+        <p class="text-2xl font-bold text-[var(--text-primary)]">Acreditable</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we review -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-8 text-center">Qué revisamos</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Arquitectura & escalabilidad</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Cómo está estructurado el sistema, dónde se va a romper bajo carga y qué haría falta para crecer.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Seguridad</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Autenticación, reglas de BaaS, manejo de secrets y los huecos que suelen pasar inadvertidos.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Testing & CI/CD</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Qué está cubierto, qué no, y qué tan riesgoso es hoy cada release.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Dependencias & riesgo de upgrade</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Dependencias desactualizadas o riesgosas, y qué implicaría de verdad actualizarlas.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Multi-tenancy & aislamiento</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Si los datos de cada cliente están realmente aislados, y por dónde se filtran los límites.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Deuda técnica</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Los atajos que te están frenando, ordenados por lo que te cuestan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-8 text-center">Qué te llevás</h2>
+      <ul class="space-y-4">
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un reporte de hallazgos</span> — qué está roto, qué es riesgoso y qué está bien, en lenguaje claro.</p>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un roadmap priorizado</span> — ordenado por impacto y esfuerzo, para que sepas qué hacer primero.</p>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un walkthrough</span> — una sesión en vivo para recorrer los hallazgos y responder preguntas.</p>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Sin lock-in</span> — el roadmap es tuyo. Usalo con nosotros, con tu equipo o con quien quieras.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-10 text-center">Cómo funciona</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">1</div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Llamada de 30 min</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Confirmamos alcance, accesos y qué necesitás resolver con más urgencia.</p>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">2</div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Dos semanas de revisión</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Recorremos el codebase, la infraestructura y el historial de forma sistemática.</p>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">3</div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Reporte & roadmap</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Recibís los hallazgos, el roadmap y un walkthrough. Después, decidís.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related case -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="text-sm text-[var(--text-tertiary)] mb-2">La mentalidad de auditoría en la práctica</p>
+      <p class="text-lg text-[var(--text-primary)] mb-6">Detectamos tres features que se habrían perdido en silencio entre ~4.400 archivos mergeados durante una migración mayor de plataforma — porque chequeamos antes de hacer ship.</p>
+      <a href="/es/case-studies/data-platform/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Leé el caso de la plataforma de datos →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Descubrí qué está realmente roto</h2>
+      <p class="mb-8 opacity-95">Dos semanas, un precio, un roadmap en el que podés actuar. La tarifa se acredita a cualquier contrato posterior.</p>
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
+        Comenzar Auditoría
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

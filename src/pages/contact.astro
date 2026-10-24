@@ -2,99 +2,51 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import ContactForm from '../components/marketing/ContactForm.astro';
-import JsonLd from '../components/seo/JsonLd.astro';
 
-const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
+const title = 'Contact — CALCIO';
+const description = 'Book a 30-minute technical call, or reach us by email. We work in UTC-5, overlapping US business hours, in English and Spanish.';
 ---
 
-<BaseLayout
-  title="Contact Sales"
-  description="Get in touch with our team to see how Astro SEO Theme can accelerate your business."
->
-  <Fragment slot="head">
-    <JsonLd
-      type="Organization"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        logo: `${siteUrl}/favicon.svg`,
-        contactPoint: {
-          '@type': 'ContactPoint',
-          telephone: '+1-555-123-4567',
-          contactType: 'customer service',
-          email: 'hello@astroseotheme.com',
-          areaServed: 'US',
-          availableLanguage: ['English', 'Spanish'],
-        },
-      }}
-    />
-  </Fragment>
-
+<BaseLayout title={title} description={description}>
   <Header slot="header" />
 
-  <main class="mx-auto max-w-7xl px-6 py-20 md:py-32">
-    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
-      <!-- Contact Info (Left) -->
-      <div>
-        <h1 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-          Let's talk about your project
-        </h1>
-        <p class="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
-          Whether you need a custom implementation, have questions about our open-source offering,
-          or just want to say hi, our team is ready to help.
-        </p>
+  <main class="mx-auto max-w-3xl px-6 py-20 md:py-28">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        Let's talk about your systems
+      </h1>
+      <p class="text-lg text-[var(--text-secondary)]">
+        The best place to start is a 30-minute call. No pitch, no surprises — just a conversation about what's broken and what's possible.
+      </p>
+    </div>
 
-        <dl class="mt-12 space-y-8">
-          <div>
-            <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Email
-            </dt>
-            <dd class="mt-2 text-lg text-[var(--text-secondary)]">
-              <a
-                href="mailto:hello@astroseotheme.com"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
-              >
-                hello@astroseotheme.com
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Phone
-            </dt>
-            <dd class="mt-2 text-lg text-[var(--text-secondary)]">
-              <a
-                href="tel:+15551234567"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
-              >
-                +1 (555) 123-4567
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Headquarters
-            </dt>
-            <dd class="mt-2 text-lg leading-relaxed text-[var(--text-secondary)]">
-              123 Innovation Drive
-              <br />
-              San Francisco, CA 94105
-              <br />
-              United States
-            </dd>
-          </div>
-        </dl>
+    <!-- Primary: Calendly -->
+    <div class="border-2 border-[var(--color-primary-600)] rounded-lg p-8 text-center mb-8">
+      <h2 class="text-xl font-bold text-[var(--text-primary)] mb-2">Book a 30-min call</h2>
+      <p class="text-sm text-[var(--text-secondary)] mb-6">Pick a time that works for you. We'll come prepared.</p>
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
+        Open the calendar
+      </a>
+    </div>
+
+    <!-- Secondary options -->
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="p-6 border border-[var(--border)] rounded-lg">
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-[var(--text-tertiary)] mb-2">Email</h3>
+        <a href="mailto:hello@calciodev.com" class="text-lg font-semibold text-[var(--color-primary-600)] hover:underline">hello@calciodev.com</a>
+        <p class="text-sm text-[var(--text-secondary)] mt-2">We usually reply within a business day.</p>
       </div>
-
-      <!-- Contact Form (Right) -->
-      <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-8 shadow-sm sm:p-10">
-        <h2 class="mb-8 font-display text-2xl font-bold text-[var(--text-primary)]">
-          Send us a message
-        </h2>
-        <ContactForm />
+      <div class="p-6 border border-[var(--border)] rounded-lg">
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-[var(--text-tertiary)] mb-2">LinkedIn</h3>
+        <a href="https://www.linkedin.com/company/calcio-dev-llc" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-[var(--color-primary-600)] hover:underline">CALCIO DEV LLC →</a>
+        <p class="text-sm text-[var(--text-secondary)] mt-2">Follow along or send a message.</p>
       </div>
     </div>
+
+    <!-- Working hours note -->
+    <p class="text-center text-sm text-[var(--text-tertiary)] mt-10">
+      We work in UTC-5, overlapping US business hours, in English and Spanish.
+    </p>
   </main>
 
   <Footer slot="footer" />

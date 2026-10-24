@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/layout/Header.astro';
+import Footer from '../../../components/layout/Footer.astro';
+
+const title = 'Servicios — CALCIO';
+const description = 'Auditorías técnicas, rescate de proyectos, CTO fraccionario, software a medida, analytics embebido, automatización de QA e IA aplicada para empresas B2B en crecimiento.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="bg-[var(--bg)] pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        Qué hacemos
+      </h1>
+      <p class="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+        Construimos, conectamos y aclaramos software para empresas que superaron sus propios sistemas. Empezá con una auditoría de alcance fijo y, desde ahí, construimos o lideramos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Anchor: Audit -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="border-2 border-[var(--color-primary-600)] rounded-lg p-8 md:p-10">
+        <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">Empezá acá</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mt-2 mb-4">
+          Auditoría de Arquitectura & Deuda Técnica
+        </h2>
+        <p class="text-[var(--text-secondary)] mb-6 max-w-2xl">
+          Dos semanas, alcance fijo. Revisamos arquitectura, seguridad, tests, CI/CD, dependencias, escalabilidad y multi-tenancy, y te entregamos un roadmap priorizado. USD 4.000–6.000, acreditable a un contrato posterior.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/es/audit/" class="inline-flex items-center justify-center px-5 py-2.5 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
+            Ver la Auditoría
+          </a>
+          <a href="/es/case-studies/data-platform/" class="inline-flex items-center justify-center px-5 py-2.5 border border-[var(--border)] text-[var(--text-primary)] font-semibold rounded-lg hover:bg-[var(--bg-secondary)] transition-colors">
+            Caso relacionado →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Build (Construir)</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Rescate de Proyectos</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Tomamos software a medio hacer o abandonado, recuperamos la propiedad del código y las cuentas, y lo llevamos a producción. Terminás siendo dueño de lo que hace funcionar tu negocio.
+          </p>
+          <a href="/es/case-studies/listing-los-cabos/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver Listing Los Cabos →</a>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Software a Medida & Integraciones</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Sistemas hechos a medida, APIs e integraciones con las herramientas que ya usás (ERP, CRM, legacy). Pagos y suscripciones con Stripe.
+          </p>
+          <a href="/es/case-studies/listing-los-cabos/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver un rescate + build →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Connect (Conectar)</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Automatización & Integraciones</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Procesos que se ejecutan solos: conectores a medida, Apps Script, bots de WhatsApp y Manychat, y flujos de datos que reemplazan el reporte que alguien arma a mano cada mes.
+          </p>
+          <a href="/es/case-studies/new-condal/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver New Condal →</a>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">IA Aplicada</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Solo cuando agrega valor real: agentes de datos, asistentes y parsing de documentos que convierte PDFs que nadie podía analizar en datos estructurados y consultables.
+          </p>
+          <a href="/es/case-studies/ivee/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver IVEE →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clarify -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Clarify (Aclarar)</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Analytics Embebido & BI</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Dashboards dentro de tu producto, con aislamiento por cliente para que cada uno vea solo sus datos. Apache Superset, BigQuery y reportes automatizados.
+          </p>
+          <a href="/es/case-studies/data-platform/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver la plataforma de datos →</a>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Automatización de QA & Confianza en Releases</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Una estrategia de testing desde cero: E2E con Playwright, tests de integración backend y gates de calidad post-deploy — para que los releases pasen de días a minutos.
+          </p>
+          <a href="/es/case-studies/ticketing-platform/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver la plataforma de ticketing →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Lead (Liderar)</h2>
+      <div class="p-6 border border-[var(--border)] rounded-lg max-w-2xl">
+        <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">CTO Fraccionario</h3>
+        <p class="text-sm text-[var(--text-secondary)] mb-4">
+          Liderazgo técnico sin contratar un CTO full-time: roadmap, decisiones de arquitectura, coordinación de equipo y hiring. Lideramos sistemas críticos durante años — incluyendo los de un gobierno de ciudad.
+        </p>
+        <a href="/es/case-studies/government-systems/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver el trabajo de gobierno →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">¿No sabés por dónde empezar?</h2>
+      <p class="mb-8 opacity-95">Reservá una llamada de 30 minutos. Juntos vemos si necesitás una auditoría, un rescate o alguien que lidere.</p>
+      <a href="/es/contact/" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
+        Hablemos
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

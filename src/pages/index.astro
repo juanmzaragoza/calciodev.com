@@ -1,132 +1,434 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import JsonLd from '../components/seo/JsonLd.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import HeroSection from '../components/marketing/HeroSection.astro';
-import LogoCloud from '../components/marketing/LogoCloud.astro';
-import BentoGrid from '../components/marketing/BentoGrid.astro';
-import FaqAccordion from '../components/marketing/FaqAccordion.astro';
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://astro-seo-theme.vercel.app';
+const title = 'CALCIO — Technical Audits & Software Rescue';
+const description = 'Your company grew. Your systems didn\'t. We audit technical debt, rescue stalled projects, and provide fractional CTO leadership for B2B growth-stage companies.';
 ---
 
-<BaseLayout
-  title="Astro SEO Theme - The Ultimate B2B/SaaS Marketing Theme"
-  description="Open-source Astro theme with advanced SEO, GEO & AEO optimization. Built for SaaS companies and B2B marketing websites. Lighthouse 100/100."
-  appendSiteName={false}
->
-  <Fragment slot="head">
-    <JsonLd
-      type="WebSite"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        description: 'The ultimate open-source Astro theme for B2B/SaaS marketing websites.',
-        searchUrl: `${siteUrl}/search`,
-      }}
-    />
-    <JsonLd
-      type="Organization"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        description:
-          'Open-source Astro theme with advanced SEO optimization for B2B and SaaS websites.',
-      }}
-    />
-  </Fragment>
+<BaseLayout title={title} description={description}>
   <Header slot="header" />
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-[var(--bg)] pt-20 pb-16 md:pt-32 md:pb-24">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        Your company grew.<br />
+        <span class="text-[var(--color-primary-600)]">Your systems didn't.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+        We rescue unstable infrastructure, audit technical debt, and provide fractional CTO leadership for B2B companies in growth stage.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="https://calendly.com/juanmanuelzaragoza/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors"
+        >
+          Book a 30-min Call
+        </a>
+        <a
+          href="/audit/"
+          class="inline-flex items-center justify-center px-6 py-3 border border-[var(--border)] text-[var(--text-primary)] font-semibold rounded-lg hover:bg-[var(--bg-secondary)] transition-colors"
+        >
+          See the Audit
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <HeroSection
-    badge="v1.0 is now live"
-    titleStart="The SEO Theme"
-    titleHighlight="Your SaaS Deserves"
-    description="Advanced technical SEO, GEO & AEO optimization out of the box. Lighthouse 100/100. Built with Astro, Tailwind & React."
-    primaryCtaText="Get Started on GitHub"
-    primaryCtaHref="https://github.com/druedaro/astro-seo-theme"
-    primaryCtaAriaLabel="View Astro SEO Theme on GitHub"
-    secondaryCtaText="Read the Docs"
-    secondaryCtaHref="/docs"
-  />
+  <!-- Trusted by -->
+  <section class="border-t border-b border-[var(--border)] bg-[var(--bg-secondary)] py-8 md:py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <p class="text-center text-sm text-[var(--text-secondary)] mb-6">
+        Trusted by teams in real estate, ticketing, data platforms and government
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-sm text-[var(--text-tertiary)]">
+        <div>Listing Los Cabos</div>
+        <div>New Condal</div>
+        <div>IVEE</div>
+        <div>Amedia Social</div>
+        <div>GCBA</div>
+      </div>
+    </div>
+  </section>
 
-  <LogoCloud
-    logos={[
-      {
-        name: 'Vercel',
-        src: '/logos/vercel.svg',
-        className: 'dark:invert',
-      },
-      {
-        name: 'Astro',
-        src: '/logos/astro-dark.svg',
-        darkSrc: '/logos/astro-light.svg',
-      },
-      {
-        name: 'Tailwind',
-        src: '/logos/tailwind.svg',
-      },
-      { name: 'React', src: '/logos/react.svg' },
-    ]}
-  />
+  <!-- Problems We Solve -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Problems we solve
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">The previous developer left</p>
+          <p class="text-[var(--text-secondary)] text-sm">and the project is half-built, with no one who understands the architecture.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">We don't own our code</p>
+          <p class="text-[var(--text-secondary)] text-sm">The previous vendor locked us out. We need control of our infrastructure.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">Every release is a gamble</p>
+          <p class="text-[var(--text-secondary)] text-sm">No tests, no CI/CD, manual deployments. We're afraid to ship.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">We need to scale, but first...</p>
+          <p class="text-[var(--text-secondary)] text-sm">we need to know what's broken. We need a roadmap, not a rewrite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <BentoGrid
-    title="Everything you need to rank higher"
-    subtitle="Built from the ground up for technical SEO and modern AI search engines."
-    items={[
-      {
-        title: 'Zero-JS by Default',
-        description:
-          'Ship less JavaScript and achieve perfect 100/100 Lighthouse scores. React is only loaded for interactive islands when absolutely necessary.',
-        colSpan: 2,
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>',
-      },
-      {
-        title: 'Automatic JSON-LD',
-        description:
-          'Dynamic Schema.org structured data generation for Articles, FAQs, Organizations, and Breadcrumbs.',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>',
-      },
-      {
-        title: 'GEO & AEO Ready',
-        description:
-          'Optimized content structures and semantic HTML designed for Generative AI and Featured Snippets.',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>',
-      },
-      {
-        title: 'i18n Support',
-        description: 'First-class support for multiple languages with automatic hreflang tags.',
-        colSpan: 2,
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>',
-      },
-    ]}
-  />
+  <!-- Services Overview -->
+  <section class="py-16 md:py-24 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        What we do
+      </h2>
 
-  <FaqAccordion
-    title="Frequently Asked Questions"
-    faqs={[
-      {
-        question: 'Is Astro SEO Theme really free?',
-        answer:
-          'Yes! It is 100% open-source and released under the MIT license. You can use it for personal and commercial projects without any attribution required (though it is always appreciated!).',
-      },
-      {
-        question: 'Do I need to know React to use this?',
-        answer:
-          'Not at all. The entire core is built with Astro and standard HTML/CSS. React is only used for highly interactive components (like the Pricing toggle and Dark Mode switch) using Astro Islands, meaning 0kb of JS is loaded for the rest of the site.',
-      },
-      {
-        question: 'How is the JSON-LD generated?',
-        answer:
-          'We have built custom Astro components that automatically read your content (like the Blog frontmatter or the FAQs array) and generate valid Schema.org JSON-LD scripts in the `<head>` of the document. This helps Google understand your content structure instantly.',
-      },
-      {
-        question: 'Can I host this on Vercel or Netlify?',
-        answer:
-          'Absolutely. Astro compiles to static HTML/CSS (SSG) by default, meaning you can deploy it to any static host like Vercel, Netlify, Cloudflare Pages, or even GitHub Pages with zero configuration.',
-      },
-    ]}
-  />
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Build</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Custom Software & Integrations</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Systems to measure, APIs, integrations with existing tools (ERP, CRM, legacy), payments with Stripe.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Project Rescue</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Take over a stalled project, recover code ownership and infrastructure control, ship to production.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Connect</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automation & Integrations</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Processes that run on their own: WhatsApp and Manychat bots, Apps Script, tool integrations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Clarify</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Embedded Analytics & BI</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Dashboards inside your product, with per-customer isolation. BigQuery, Superset, automated reports.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA Automation & Release Confidence</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Testing strategy from zero. E2E with Playwright, quality gates post-deploy, fewer surprises.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Lead</h3>
+        <div>
+          <h4 class="font-semibold text-[var(--text-primary)] mb-2">Fractional CTO</h4>
+          <p class="text-sm text-[var(--text-secondary)]">Technical leadership without hiring full-time. Roadmap, architecture decisions, team coordination, hiring.</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/services/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
+          View all services →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anchor Offer -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-2xl px-6 border border-[var(--border)] rounded-lg p-8 md:p-12 bg-[var(--bg-secondary)]">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-6">
+        Architecture & Technical Debt Audit
+      </h2>
+      <p class="text-[var(--text-secondary)] mb-8">
+        Two weeks. Fixed scope. A complete map of what's broken and a prioritized roadmap to fix it.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Investment</p>
+          <p class="text-3xl font-bold text-[var(--color-primary-600)]">USD 4,000–6,000</p>
+          <p class="text-xs text-[var(--text-tertiary)] mt-2">Credited toward a follow-up engagement</p>
+        </div>
+        <div>
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">We review</p>
+          <ul class="text-sm text-[var(--text-primary)] space-y-1">
+            <li>• Architecture & scalability</li>
+            <li>• Security (auth, BaaS rules, secrets)</li>
+            <li>• Testing & CI/CD</li>
+            <li>• Dependencies & upgrade risk</li>
+            <li>• Multi-tenancy & isolation</li>
+          </ul>
+        </div>
+      </div>
+
+      <a
+        href="https://calendly.com/juanmanuelzaragoza/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors w-full md:w-auto text-center"
+      >
+        Start the Audit
+      </a>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-16 md:py-24 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Recent work
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- Listing Los Cabos -->
+        <a href="/case-studies/listing-los-cabos/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              Listing Los Cabos
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Real Estate</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Rescued a half-built React + Firebase platform, added Stripe subscriptions and security, now serving 2 cities from one codebase.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>6 months to production</span>
+            <span>•</span>
+            <span>2 cities, 1 codebase</span>
+            <span>•</span>
+            <span>3 subscription plans</span>
+          </div>
+        </a>
+
+        <!-- Ticketing Platform -->
+        <a href="/case-studies/ticketing-platform/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              High-Volume Ticketing
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">QA</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Built a testing strategy from zero: E2E with Playwright, backend integration tests, and automated gates. Releases went from days to minutes.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>91 E2E tests</span>
+            <span>•</span>
+            <span>616 integration tests</span>
+            <span>•</span>
+            <span>3 payment gateways</span>
+          </div>
+        </a>
+
+        <!-- Data Platform -->
+        <a href="/case-studies/data-platform/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              Multi-Tenant Data Platform
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Analytics</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Full-stack data platform with per-customer isolation, embedded Superset dashboards, and data agents. Every client sees only their data.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>3 Superset upgrades in 30 days</span>
+            <span>•</span>
+            <span>4,400 files merged</span>
+            <span>•</span>
+            <span>3 isolated tenants</span>
+          </div>
+        </a>
+
+        <!-- Government -->
+        <a href="/case-studies/government-systems/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              City-Wide Government Systems
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Leadership</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Technical lead for employee evaluation, medication dispensing, and civic participation systems serving tens of thousands of users.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>7 years</span>
+            <span>•</span>
+            <span>12 systems</span>
+            <span>•</span>
+            <span>5 tech stacks</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center">
+        <a href="/case-studies/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
+          View all 6 cases →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        How we work
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Free 30-min call</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Understand your situation, constraints and goals.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Fixed-scope audit</h3>
+          <p class="text-sm text-[var(--text-secondary)]">2 weeks, one deliverable, one price. A roadmap you can act on.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Build or fractional CTO</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Weekly updates. Transparent progress. Scope changes in writing.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            4
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">You own it</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Code, infrastructure, accounts, documentation. All yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-16 md:py-24 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-2xl px-6">
+      <blockquote class="text-center">
+        <p class="text-lg text-[var(--text-primary)] mb-6">
+          "Juan Manuel helped us overhaul our entire platform — from design to security to subscriptions. He not only resolved the existing issues but positioned the platform for future growth. We now have full control of a system that genuinely works."
+        </p>
+        <p class="font-semibold text-[var(--text-primary)]">Julio César Pérez</p>
+        <p class="text-sm text-[var(--text-tertiary)]">Project Leader · Listing Los Cabos, Mexico City</p>
+        <p class="text-xs text-[var(--color-primary-600)] mt-4">
+          <a href="https://youtu.be/cTap4d1NMDY" target="_blank" rel="noopener noreferrer" class="hover:underline">
+            Watch video →
+          </a>
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Questions
+      </h2>
+
+      <div class="space-y-6">
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            Do you work in US time zones?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Yes. We operate in UTC-5 (equivalent to US Eastern Standard Time) and overlap with US business hours throughout the year.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            Who owns the code?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            You do. You own all code, infrastructure, accounts, and documentation. We transfer everything to your control at the end of each engagement.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            What if we already have developers?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            We work alongside your team. We can mentor, lead architecture decisions, or handle the critical path while your team handles parallel work. The audit clarifies what makes sense.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            How is the audit priced?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Fixed: USD 4,000–6,000 for a 2-week audit, depending on your codebase size and complexity. The fee is credited toward any follow-up engagement.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            Do you sign NDAs?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Yes. Standard mutual NDAs are part of every engagement.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            Can you work with our existing stack?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            We specialize in Node.js, Next.js, React, NestJS, Python, PostgreSQL, GCP and AWS, but we've worked with Laravel, Angular, Java, .NET and many other stacks. Tell us what you're using and we'll let you know.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 md:py-24 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to fix your systems?
+      </h2>
+      <p class="text-lg mb-8 opacity-95">
+        Book a 30-minute technical assessment call. No pitch, no surprises — just a conversation about what's broken and what's possible.
+      </p>
+      <a
+        href="https://calendly.com/juanmanuelzaragoza/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors"
+      >
+        Book a Call
+      </a>
+    </div>
+  </section>
 
   <Footer slot="footer" />
 </BaseLayout>

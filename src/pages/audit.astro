@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const title = 'Architecture & Technical Debt Audit — CALCIO';
+const description = 'A two-week, fixed-scope audit of your architecture, security, testing, CI/CD and scalability — with a prioritized roadmap. USD 4,000–6,000, credited toward a follow-up.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="bg-[var(--bg)] pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">The anchor offer</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mt-3 mb-6">
+        Architecture & Technical Debt Audit
+      </h1>
+      <p class="text-lg text-[var(--text-secondary)] mb-8">
+        Two weeks. Fixed scope. A complete map of what's broken and a prioritized roadmap to fix it — before you commit to a bigger project.
+      </p>
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
+        Book a 30-min Call
+      </a>
+    </div>
+  </section>
+
+  <!-- Price + duration strip -->
+  <section class="border-t border-b border-[var(--border)] bg-[var(--bg-secondary)] py-8">
+    <div class="mx-auto max-w-4xl px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)] mb-1">Duration</p>
+        <p class="text-2xl font-bold text-[var(--text-primary)]">2 weeks</p>
+      </div>
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)] mb-1">Investment</p>
+        <p class="text-2xl font-bold text-[var(--color-primary-600)]">USD 4,000–6,000</p>
+      </div>
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)] mb-1">The fee</p>
+        <p class="text-2xl font-bold text-[var(--text-primary)]">Credited</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we review -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-8 text-center">What we review</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Architecture & scalability</h3>
+          <p class="text-sm text-[var(--text-secondary)]">How the system is structured, where it will break under load, and what it would take to grow.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Security</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Authentication, BaaS rules, secrets management, and the gaps that tend to go unnoticed.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Testing & CI/CD</h3>
+          <p class="text-sm text-[var(--text-secondary)]">What's covered, what isn't, and how risky each release is today.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Dependencies & upgrade risk</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Outdated or risky dependencies, and what upgrading them would actually involve.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Multi-tenancy & isolation</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Whether each customer's data is truly isolated, and where the boundaries leak.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Technical debt</h3>
+          <p class="text-sm text-[var(--text-secondary)]">The shortcuts that are slowing you down, ranked by what they cost you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-8 text-center">What you get</h2>
+      <ul class="space-y-4">
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">A findings report</span> — what's broken, what's risky, and what's fine, in plain language.</p>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">A prioritized roadmap</span> — ordered by impact and effort, so you know what to do first.</p>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">A walkthrough</span> — a live session to go through the findings and answer questions.</p>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-[var(--color-primary-600)] font-bold">→</span>
+          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">No lock-in</span> — the roadmap is yours. Use it with us, your team, or anyone else.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-10 text-center">How it works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">1</div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">30-min call</h3>
+          <p class="text-sm text-[var(--text-secondary)]">We confirm scope, access, and what you most need answered.</p>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">2</div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Two weeks of review</h3>
+          <p class="text-sm text-[var(--text-secondary)]">We go through the codebase, infrastructure and history systematically.</p>
+        </div>
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">3</div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Report & roadmap</h3>
+          <p class="text-sm text-[var(--text-secondary)]">You get the findings, the roadmap, and a walkthrough. Then you decide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related case -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="text-sm text-[var(--text-tertiary)] mb-2">An audit mindset in practice</p>
+      <p class="text-lg text-[var(--text-primary)] mb-6">We caught three features that would have been silently lost across ~4,400 merged files during a major platform migration — because we checked before shipping.</p>
+      <a href="/case-studies/data-platform/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Read the data platform case →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Find out what's actually broken</h2>
+      <p class="mb-8 opacity-95">Two weeks, one price, a roadmap you can act on. The fee is credited toward any follow-up engagement.</p>
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
+        Start the Audit
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

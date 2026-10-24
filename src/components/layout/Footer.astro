@@ -13,7 +13,8 @@ const footerColumns = [
   {
     title: lang === 'en' ? 'Services' : 'Servicios',
     links: [
-      { label: lang === 'en' ? 'Audit' : 'Auditoría', href: getLocalizedPath(lang, '/services/audit') },
+      { label: lang === 'en' ? 'Services' : 'Servicios', href: getLocalizedPath(lang, '/services') },
+      { label: lang === 'en' ? 'Audit' : 'Auditoría', href: getLocalizedPath(lang, '/audit') },
       { label: t('nav.caseStudies'), href: getLocalizedPath(lang, '/case-studies') },
     ],
   },
@@ -21,8 +22,8 @@ const footerColumns = [
     title: lang === 'en' ? 'Company' : 'Empresa',
     links: [
       { label: t('nav.about'), href: getLocalizedPath(lang, '/about') },
-      { label: t('nav.blog'), href: getLocalizedPath(lang, '/blog') },
-      { label: lang === 'en' ? 'LinkedIn' : 'LinkedIn', href: 'https://www.linkedin.com/company/calcio-dev-llc' },
+      { label: t('nav.contact'), href: getLocalizedPath(lang, '/contact') },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/company/calcio-dev-llc' },
     ],
   },
 ];

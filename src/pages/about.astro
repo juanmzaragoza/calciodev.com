@@ -2,35 +2,97 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+
+const title = 'About — CALCIO';
+const description = 'CALCIO DEV LLC is a software studio that builds, automates and rescues software for B2B growth-stage companies, led by Juan Manuel Zaragoza.';
 ---
 
-<BaseLayout title="About Us" description="Learn more about Astro SEO Theme and the team behind it.">
+<BaseLayout title={title} description={description}>
   <Header slot="header" />
 
-  <main class="mx-auto max-w-4xl px-6 py-20 md:py-32">
-    <header class="text-center md:mb-16">
-      <h1 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-        About Us
+  <!-- Hero -->
+  <section class="bg-[var(--bg)] pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        We build, automate and rescue software.
       </h1>
-      <p class="mt-6 text-lg text-[var(--text-secondary)]">
-        Building the ultimate open-source SEO theme for Astro.
-      </p>
-    </header>
-
-    <div class="prose prose-zinc prose-lg mx-auto dark:prose-invert">
-      <h2>Our Mission</h2>
-      <p>
-        We believe that technical SEO shouldn't be an afterthought. It should be baked into the
-        foundation of every marketing website. That's why we created Astro SEO Theme—to provide a
-        robust, lightning-fast starting point for B2B SaaS companies.
-      </p>
-      <h2>Open Source</h2>
-      <p>
-        This project is 100% open-source and free to use under the MIT license. We encourage
-        contributions from the community to help make this the best SEO template available.
+      <p class="text-lg text-[var(--text-secondary)]">
+        CALCIO is a software studio for companies that have outgrown their systems. We take technical ownership of what matters, and hand it back to you working — and yours.
       </p>
     </div>
-  </main>
+  </section>
+
+  <!-- Story -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-2xl px-6 space-y-6 text-[var(--text-secondary)]">
+      <h2 class="text-2xl font-bold text-[var(--text-primary)]">Why we exist</h2>
+      <p>
+        Most of the companies that come to us aren't starting from scratch. They grew — added customers, features, and complexity — and at some point the software stopped keeping up. The previous developer left. The code belongs to a vendor. Every release is a gamble. The roadmap is blocked on things nobody fully understands anymore.
+      </p>
+      <p>
+        That's the work we do best: walking into a system that's already running (or half-running), figuring out what's actually going on, and making it stable, owned, and ready to grow. Sometimes that's a two-week audit. Sometimes it's a full rescue. Sometimes it's stepping in as a fractional CTO until the team can carry it.
+      </p>
+      <p>
+        We don't chase hype. We work in plain language, keep scope changes in writing, and make sure that when we're done, you own everything — the code, the infrastructure, the accounts, the documentation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-2xl px-6">
+      <div class="p-8 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+        <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-2">Juan Manuel Zaragoza</h2>
+        <p class="text-sm text-[var(--color-primary-600)] font-semibold mb-4">Founder · CALCIO DEV LLC</p>
+        <div class="space-y-4 text-[var(--text-secondary)] text-sm">
+          <p>
+            Juan Manuel has spent over fifteen years building and leading software. For nearly seven of them, he was the technical lead for systems inside the City of Buenos Aires' Ministry of Modernization — public infrastructure where traceability and reliability were not negotiable.
+          </p>
+          <p>
+            Since then, he's rescued inherited platforms, built multi-tenant data systems in production, and set up testing and release processes from zero for teams that were shipping on faith. He founded CALCIO to do that work for more companies.
+          </p>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">LinkedIn →</a>
+          <a href="https://juanmazaragoza.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">juanmazaragoza.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company facts -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid sm:grid-cols-3 gap-6 text-center">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Registered as</p>
+          <p class="font-semibold text-[var(--text-primary)]">CALCIO DEV LLC</p>
+          <p class="text-sm text-[var(--text-secondary)]">New Mexico, USA</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">We serve</p>
+          <p class="font-semibold text-[var(--text-primary)]">US & Latin America</p>
+          <p class="text-sm text-[var(--text-secondary)]">English and Spanish</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">We work in</p>
+          <p class="font-semibold text-[var(--text-primary)]">UTC-5</p>
+          <p class="text-sm text-[var(--text-secondary)]">Overlapping US business hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Let's talk about your systems</h2>
+      <p class="mb-8 opacity-95">A 30-minute call, no pitch. Just a conversation about what's broken and what's possible.</p>
+      <a href="/contact/" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
+        Get in touch
+      </a>
+    </div>
+  </section>
 
   <Footer slot="footer" />
 </BaseLayout>

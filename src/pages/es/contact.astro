@@ -2,99 +2,51 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
-import ContactForm from '../../components/marketing/ContactForm.astro';
-import JsonLd from '../../components/seo/JsonLd.astro';
 
-const siteUrl = Astro.site?.toString() ?? 'https://astro-seo-theme.vercel.app';
+const title = 'Contacto — CALCIO';
+const description = 'Reservá una llamada técnica de 30 minutos o escribinos por email. Trabajamos en UTC-5, sobreponiéndonos al horario de negocios de EE.UU., en inglés y español.';
 ---
 
-<BaseLayout
-  title="Contactar con Ventas"
-  description="Ponte en contacto con nuestro equipo para ver cómo Astro SEO Theme puede acelerar tu negocio."
->
-  <Fragment slot="head">
-    <JsonLd
-      type="Organization"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        logo: `${siteUrl}/favicon.svg`,
-        contactPoint: {
-          '@type': 'ContactPoint',
-          telephone: '+1-555-123-4567',
-          contactType: 'customer service',
-          email: 'hello@astroseotheme.com',
-          areaServed: 'US',
-          availableLanguage: ['English', 'Spanish'],
-        },
-      }}
-    />
-  </Fragment>
-
+<BaseLayout title={title} description={description}>
   <Header slot="header" />
 
-  <main class="mx-auto max-w-7xl px-6 py-20 md:py-32">
-    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
-      <!-- Contact Info (Left) -->
-      <div>
-        <h1 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-          Hablemos de tu proyecto
-        </h1>
-        <p class="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
-          Ya sea que necesites una implementación personalizada, tengas preguntas sobre nuestra
-          oferta open-source o simplemente quieras saludar, nuestro equipo está listo para ayudarte.
-        </p>
+  <main class="mx-auto max-w-3xl px-6 py-20 md:py-28">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        Hablemos de tus sistemas
+      </h1>
+      <p class="text-lg text-[var(--text-secondary)]">
+        El mejor lugar para empezar es una llamada de 30 minutos. Sin pitch, sin sorpresas — solo una conversación sobre qué está roto y qué es posible.
+      </p>
+    </div>
 
-        <dl class="mt-12 space-y-8">
-          <div>
-            <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Email
-            </dt>
-            <dd class="mt-2 text-lg text-[var(--text-secondary)]">
-              <a
-                href="mailto:hello@astroseotheme.com"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
-              >
-                hello@astroseotheme.com
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Teléfono
-            </dt>
-            <dd class="mt-2 text-lg text-[var(--text-secondary)]">
-              <a
-                href="tel:+15551234567"
-                class="hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
-              >
-                +1 (555) 123-4567
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-              Sede Central
-            </dt>
-            <dd class="mt-2 text-lg leading-relaxed text-[var(--text-secondary)]">
-              123 Innovation Drive
-              <br />
-              San Francisco, CA 94105
-              <br />
-              Estados Unidos
-            </dd>
-          </div>
-        </dl>
+    <!-- Primary: Calendly -->
+    <div class="border-2 border-[var(--color-primary-600)] rounded-lg p-8 text-center mb-8">
+      <h2 class="text-xl font-bold text-[var(--text-primary)] mb-2">Reservá una llamada de 30 min</h2>
+      <p class="text-sm text-[var(--text-secondary)] mb-6">Elegí un horario que te sirva. Vamos a llegar preparados.</p>
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
+        Abrir el calendario
+      </a>
+    </div>
+
+    <!-- Secondary options -->
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="p-6 border border-[var(--border)] rounded-lg">
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-[var(--text-tertiary)] mb-2">Email</h3>
+        <a href="mailto:hello@calciodev.com" class="text-lg font-semibold text-[var(--color-primary-600)] hover:underline">hello@calciodev.com</a>
+        <p class="text-sm text-[var(--text-secondary)] mt-2">Normalmente respondemos dentro de un día hábil.</p>
       </div>
-
-      <!-- Contact Form (Right) -->
-      <div class="rounded-3xl border border-[var(--border)] bg-[var(--bg)] p-8 shadow-sm sm:p-10">
-        <h2 class="mb-8 font-display text-2xl font-bold text-[var(--text-primary)]">
-          Envíanos un mensaje
-        </h2>
-        <ContactForm />
+      <div class="p-6 border border-[var(--border)] rounded-lg">
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-[var(--text-tertiary)] mb-2">LinkedIn</h3>
+        <a href="https://www.linkedin.com/company/calcio-dev-llc" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-[var(--color-primary-600)] hover:underline">CALCIO DEV LLC →</a>
+        <p class="text-sm text-[var(--text-secondary)] mt-2">Seguinos o mandanos un mensaje.</p>
       </div>
     </div>
+
+    <!-- Working hours note -->
+    <p class="text-center text-sm text-[var(--text-tertiary)] mt-10">
+      Trabajamos en UTC-5, sobreponiéndonos al horario de negocios de EE.UU., en inglés y español.
+    </p>
   </main>
 
   <Footer slot="footer" />

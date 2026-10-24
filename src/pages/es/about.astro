@@ -2,39 +2,97 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+
+const title = 'Nosotros — CALCIO';
+const description = 'CALCIO DEV LLC es un estudio de software que construye, automatiza y rescata software para empresas B2B en crecimiento, liderado por Juan Manuel Zaragoza.';
 ---
 
-<BaseLayout
-  title="Sobre Nosotros"
-  description="Conoce más sobre Astro SEO Theme y el equipo detrás del proyecto."
->
+<BaseLayout title={title} description={description}>
   <Header slot="header" />
 
-  <main class="mx-auto max-w-4xl px-6 py-20 md:py-32">
-    <header class="text-center md:mb-16">
-      <h1 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-        Sobre Nosotros
+  <!-- Hero -->
+  <section class="bg-[var(--bg)] pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        Construimos, automatizamos y rescatamos software.
       </h1>
-      <p class="mt-6 text-lg text-[var(--text-secondary)]">
-        Creando el tema SEO open-source definitivo para Astro.
-      </p>
-    </header>
-
-    <div class="prose prose-zinc prose-lg mx-auto dark:prose-invert">
-      <h2>Nuestra Misión</h2>
-      <p>
-        Creemos que el SEO técnico no debería ser una ocurrencia tardía. Debería estar integrado en
-        los cimientos de cada sitio web de marketing. Por eso creamos Astro SEO Theme: para
-        proporcionar un punto de partida robusto y ultrarrápido para empresas B2B SaaS.
-      </p>
-      <h2>Código Abierto</h2>
-      <p>
-        Este proyecto es 100% open-source y de uso gratuito bajo la licencia MIT. Fomentamos las
-        contribuciones de la comunidad para ayudar a convertir esto en la mejor plantilla SEO
-        disponible.
+      <p class="text-lg text-[var(--text-secondary)]">
+        CALCIO es un estudio de software para empresas que superaron sus propios sistemas. Tomamos la propiedad técnica de lo que importa y te lo devolvemos funcionando — y tuyo.
       </p>
     </div>
-  </main>
+  </section>
+
+  <!-- Story -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-2xl px-6 space-y-6 text-[var(--text-secondary)]">
+      <h2 class="text-2xl font-bold text-[var(--text-primary)]">Por qué existimos</h2>
+      <p>
+        La mayoría de las empresas que nos buscan no están empezando de cero. Crecieron — sumaron clientes, features y complejidad — y en algún momento el software dejó de acompañar. El desarrollador anterior se fue. El código es de un proveedor. Cada release es una apuesta. El roadmap está trabado en cosas que ya nadie entiende del todo.
+      </p>
+      <p>
+        Eso es lo que mejor hacemos: entrar a un sistema que ya está corriendo (o a medio correr), entender qué está pasando de verdad, y dejarlo estable, propio y listo para crecer. A veces es una auditoría de dos semanas. A veces es un rescate completo. A veces es entrar como CTO fraccionario hasta que el equipo pueda sostenerlo.
+      </p>
+      <p>
+        No corremos atrás del hype. Trabajamos en lenguaje claro, dejamos los cambios de alcance por escrito y nos aseguramos de que, cuando terminamos, seas dueño de todo — el código, la infraestructura, las cuentas, la documentación.
+      </p>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-2xl px-6">
+      <div class="p-8 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+        <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-2">Juan Manuel Zaragoza</h2>
+        <p class="text-sm text-[var(--color-primary-600)] font-semibold mb-4">Fundador · CALCIO DEV LLC</p>
+        <div class="space-y-4 text-[var(--text-secondary)] text-sm">
+          <p>
+            Juan Manuel lleva más de quince años construyendo y liderando software. Durante casi siete de ellos fue el lead técnico de sistemas dentro del Ministerio de Modernización del Gobierno de la Ciudad de Buenos Aires — infraestructura pública donde la trazabilidad y la confiabilidad no eran negociables.
+          </p>
+          <p>
+            Desde entonces rescató plataformas heredadas, construyó sistemas de datos multi-cliente en producción y armó procesos de testing y release desde cero para equipos que hacían ship a ciegas. Fundó CALCIO para hacer ese trabajo para más empresas.
+          </p>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">LinkedIn →</a>
+          <a href="https://juanmazaragoza.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">juanmazaragoza.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company facts -->
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid sm:grid-cols-3 gap-6 text-center">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Registrada como</p>
+          <p class="font-semibold text-[var(--text-primary)]">CALCIO DEV LLC</p>
+          <p class="text-sm text-[var(--text-secondary)]">New Mexico, USA</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Atendemos</p>
+          <p class="font-semibold text-[var(--text-primary)]">EE.UU. y Latinoamérica</p>
+          <p class="text-sm text-[var(--text-secondary)]">Inglés y español</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Trabajamos en</p>
+          <p class="font-semibold text-[var(--text-primary)]">UTC-5</p>
+          <p class="text-sm text-[var(--text-secondary)]">Sobreponiéndonos al horario de negocios de EE.UU.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Hablemos de tus sistemas</h2>
+      <p class="mb-8 opacity-95">Una llamada de 30 minutos, sin pitch. Solo una conversación sobre qué está roto y qué es posible.</p>
+      <a href="/es/contact/" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
+        Hablemos
+      </a>
+    </div>
+  </section>
 
   <Footer slot="footer" />
 </BaseLayout>

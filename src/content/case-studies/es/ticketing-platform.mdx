@@ -1,0 +1,44 @@
+---
+title: 'Confianza en los releases para una plataforma de ticketing de alto volumen'
+description: 'Una estrategia de testing desde cero para una plataforma de venta de entradas en España: integración backend y E2E con Playwright, con gate post-deploy.'
+pubDate: 2025-04-20
+client: 'Una plataforma de venta de entradas en España'
+industry: 'Eventos y Ticketing'
+results:
+  - metric: 'Cobertura E2E'
+    value: '20 → 91'
+    description: 'Tests end-to-end sobre los flujos críticos de compra y check-in.'
+  - metric: 'Casos de integración'
+    value: '616'
+    description: 'Casos de test de integración backend sobre los servicios centrales.'
+  - metric: 'Pagos testeados'
+    value: '3 pasarelas'
+    description: 'Tres pasarelas de pago testeadas de punta a punta, con 3DS, en 3 navegadores.'
+tags: ['qa automation', 'playwright', 'testing', 'pagos', 'releases']
+draft: false
+---
+
+## Contexto
+
+Una plataforma de venta de entradas en España necesitaba hacer ship más rápido sin romper los flujos de los que depende su facturación — compra de entradas, cupones, check-in y reenvío de entradas.
+
+## El problema
+
+- Sin tests automatizados.
+- Los releases se validaban a mano: lento y propenso a errores.
+- Los flujos más críticos — compra, cupones, check-in, reenvío — no tenían ninguna automatización que los protegiera.
+
+## Qué hicimos
+
+- Construimos una **estrategia de testing desde cero**: tests de integración backend más tests end-to-end con Playwright.
+- Agregamos un **gate de calidad post-deploy** que corre los tests críticos después de cada deploy.
+- Testeamos **tres pasarelas de pago de punta a punta**, con autenticación 3DS, en tres navegadores.
+- Sumamos analytics embebido con filtro por vendedor para que el negocio viera sus propios números.
+
+## Resultado
+
+La validación de releases pasó de días a minutos, y el equipo pudo hacer ship de cambios en flujos críticos sin contener la respiración.
+
+## Stack
+
+Playwright · Testing de integración backend · Pasarelas de pago con 3DS · Analytics embebido

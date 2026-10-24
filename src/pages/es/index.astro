@@ -1,134 +1,434 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import JsonLd from '../../components/seo/JsonLd.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
-import HeroSection from '../../components/marketing/HeroSection.astro';
-import LogoCloud from '../../components/marketing/LogoCloud.astro';
-import BentoGrid from '../../components/marketing/BentoGrid.astro';
-import FaqAccordion from '../../components/marketing/FaqAccordion.astro';
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://astro-seo-theme.vercel.app';
+const title = 'CALCIO — Auditorías Técnicas y Rescate de Software';
+const description = 'Tu empresa creció. Tus sistemas no. Auditamos deuda técnica, rescatamos proyectos estancados y proporcionamos liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.';
 ---
 
-<BaseLayout
-  title="Astro SEO Theme - El Tema B2B/SaaS de Marketing Definitivo"
-  description="Tema open-source en Astro con optimización SEO, GEO y AEO avanzada. Construido para empresas SaaS y webs de marketing B2B. Lighthouse 100/100."
-  appendSiteName={false}
->
-  <Fragment slot="head">
-    <JsonLd
-      type="WebSite"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        description:
-          'El tema open-source definitivo de Astro para sitios web de marketing B2B/SaaS.',
-        searchUrl: `${siteUrl}/search`,
-      }}
-    />
-    <JsonLd
-      type="Organization"
-      data={{
-        name: 'Astro SEO Theme',
-        url: siteUrl,
-        description:
-          'Tema open-source de Astro con optimización SEO avanzada para sitios web B2B y SaaS.',
-      }}
-    />
-  </Fragment>
+<BaseLayout title={title} description={description}>
   <Header slot="header" />
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-[var(--bg)] pt-20 pb-16 md:pt-32 md:pb-24">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+        Tu empresa creció.<br />
+        <span class="text-[var(--color-primary-600)]">Tus sistemas no.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+        Rescatamos infraestructura inestable, auditamos deuda técnica y proporcionamos liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="https://calendly.com/juanmanuelzaragoza/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors"
+        >
+          Reservar Llamada (30 min)
+        </a>
+        <a
+          href="/es/audit/"
+          class="inline-flex items-center justify-center px-6 py-3 border border-[var(--border)] text-[var(--text-primary)] font-semibold rounded-lg hover:bg-[var(--bg-secondary)] transition-colors"
+        >
+          Ver la Auditoría
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <HeroSection
-    badge="v1.0 disponible"
-    titleStart="El Tema SEO"
-    titleHighlight="Que Tu SaaS Merece"
-    description="SEO técnico avanzado, optimización GEO y AEO incluidos. Lighthouse 100/100. Construido con Astro, Tailwind y React."
-    primaryCtaText="Empezar en GitHub"
-    primaryCtaHref="https://github.com/druedaro/astro-seo-theme"
-    primaryCtaAriaLabel="Ver Astro SEO Theme en GitHub"
-    secondaryCtaText="Leer la Documentación"
-    secondaryCtaHref="/es/docs"
-  />
+  <!-- Trusted by -->
+  <section class="border-t border-b border-[var(--border)] bg-[var(--bg-secondary)] py-8 md:py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <p class="text-center text-sm text-[var(--text-secondary)] mb-6">
+        Confianza de equipos en bienes raíces, ticketing, plataformas de datos y gobierno
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-sm text-[var(--text-tertiary)]">
+        <div>Listing Los Cabos</div>
+        <div>New Condal</div>
+        <div>IVEE</div>
+        <div>Amedia Social</div>
+        <div>GCBA</div>
+      </div>
+    </div>
+  </section>
 
-  <LogoCloud
-    title="Con la confianza de equipos innovadores"
-    logos={[
-      {
-        name: 'Vercel',
-        src: '/logos/vercel.svg',
-        className: 'dark:invert',
-      },
-      {
-        name: 'Astro',
-        src: '/logos/astro-dark.svg',
-        darkSrc: '/logos/astro-light.svg',
-      },
-      {
-        name: 'Tailwind',
-        src: '/logos/tailwind.svg',
-      },
-      { name: 'React', src: '/logos/react.svg' },
-    ]}
-  />
+  <!-- Problems We Solve -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Problemas que resolvemos
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">El desarrollador anterior se fue</p>
+          <p class="text-[var(--text-secondary)] text-sm">y el proyecto está a mitad de camino, sin que nadie entienda la arquitectura.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">No somos dueños de nuestro código</p>
+          <p class="text-[var(--text-secondary)] text-sm">El proveedor anterior nos bloqueó. Necesitamos control de nuestra infraestructura.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">Cada release es una apuesta</p>
+          <p class="text-[var(--text-secondary)] text-sm">Sin tests, sin CI/CD, deployments manuales. Nos da miedo hacer ship.</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <p class="text-[var(--text-primary)] font-semibold mb-2">Necesitamos escalar, pero primero...</p>
+          <p class="text-[var(--text-secondary)] text-sm">debemos saber qué está roto. Necesitamos un roadmap, no una reescritura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <BentoGrid
-    title="Todo lo que necesitas para posicionar mejor"
-    subtitle="Construido desde cero para SEO técnico y motores de búsqueda con IA."
-    items={[
-      {
-        title: 'Cero JS por Defecto',
-        description:
-          'Envía menos JavaScript y consigue puntuaciones perfectas de 100/100 en Lighthouse. React solo se carga para islas interactivas cuando es absolutamente necesario.',
-        colSpan: 2,
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>',
-      },
-      {
-        title: 'JSON-LD Automático',
-        description:
-          'Generación dinámica de datos estructurados Schema.org para Artículos, FAQs, Organizaciones y Breadcrumbs.',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>',
-      },
-      {
-        title: 'Preparado para GEO y AEO',
-        description:
-          'Estructuras de contenido optimizadas y HTML semántico diseñado para IA Generativa y Fragmentos Destacados.',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>',
-      },
-      {
-        title: 'Soporte i18n',
-        description: 'Soporte nativo para múltiples idiomas con etiquetas hreflang automáticas.',
-        colSpan: 2,
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>',
-      },
-    ]}
-  />
+  <!-- Services Overview -->
+  <section class="py-16 md:py-24 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Qué hacemos
+      </h2>
 
-  <FaqAccordion
-    title="Preguntas Frecuentes"
-    faqs={[
-      {
-        question: '¿Astro SEO Theme es realmente gratis?',
-        answer:
-          '¡Sí! Es 100% open-source y está publicado bajo la licencia MIT. Puedes usarlo para proyectos personales y comerciales sin necesidad de atribución (aunque siempre se agradece).',
-      },
-      {
-        question: '¿Necesito saber React para usarlo?',
-        answer:
-          'Para nada. Todo el núcleo está construido con Astro y HTML/CSS estándar. React solo se usa para componentes altamente interactivos (como el toggle de Precios y el switch de Modo Oscuro) usando Astro Islands, lo que significa 0kb de JS para el resto del sitio.',
-      },
-      {
-        question: '¿Cómo se genera el JSON-LD?',
-        answer:
-          'Hemos construido componentes Astro personalizados que leen automáticamente tu contenido (como el frontmatter del Blog o el array de FAQs) y generan scripts JSON-LD de Schema.org válidos en el `<head>` del documento. Esto ayuda a Google a entender la estructura de tu contenido al instante.',
-      },
-      {
-        question: '¿Puedo alojar esto en Vercel o Netlify?',
-        answer:
-          'Por supuesto. Astro compila a HTML/CSS estático (SSG) por defecto, lo que significa que puedes desplegarlo en cualquier host estático como Vercel, Netlify, Cloudflare Pages, o incluso GitHub Pages sin ninguna configuración.',
-      },
-    ]}
-  />
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Build (Construir)</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Software Personalizado & Integraciones</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Sistemas de medición, APIs, integraciones con herramientas existentes (ERP, CRM, legacy), pagos con Stripe.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Rescate de Proyectos</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Tomar un proyecto estancado, recuperar control del código e infraestructura, hacer ship a producción.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Connect (Conectar)</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automatización & Integraciones</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Procesos que se ejecutan solos: bots de WhatsApp y Manychat, Apps Script, integraciones de herramientas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Clarify (Aclarar)</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Analytics Embebidos & BI</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Dashboards dentro de tu producto, con aislamiento por cliente. BigQuery, Superset, reportes automatizados.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automatización QA & Confianza en Release</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Estrategia de testing desde cero. E2E con Playwright, gates de calidad post-deploy, menos sorpresas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Lead (Liderar)</h3>
+        <div>
+          <h4 class="font-semibold text-[var(--text-primary)] mb-2">CTO Fraccionario</h4>
+          <p class="text-sm text-[var(--text-secondary)]">Liderazgo técnico sin contratar tiempo completo. Roadmap, decisiones de arquitectura, coordinación de equipo, hiring.</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/es/services/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
+          Ver todos los servicios →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anchor Offer -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-2xl px-6 border border-[var(--border)] rounded-lg p-8 md:p-12 bg-[var(--bg-secondary)]">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-6">
+        Auditoría de Arquitectura & Deuda Técnica
+      </h2>
+      <p class="text-[var(--text-secondary)] mb-8">
+        Dos semanas. Alcance fijo. Un mapa completo de qué está roto y un roadmap priorizado para arreglarlo.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Inversión</p>
+          <p class="text-3xl font-bold text-[var(--color-primary-600)]">USD 4.000–6.000</p>
+          <p class="text-xs text-[var(--text-tertiary)] mt-2">Acreditado hacia un engagement futuro</p>
+        </div>
+        <div>
+          <p class="text-sm text-[var(--text-tertiary)] mb-1">Revisamos</p>
+          <ul class="text-sm text-[var(--text-primary)] space-y-1">
+            <li>• Arquitectura & escalabilidad</li>
+            <li>• Seguridad (auth, reglas BaaS, secrets)</li>
+            <li>• Testing & CI/CD</li>
+            <li>• Dependencias & riesgo de upgrade</li>
+            <li>• Multi-tenancy & aislamiento</li>
+          </ul>
+        </div>
+      </div>
+
+      <a
+        href="https://calendly.com/juanmanuelzaragoza/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors w-full md:w-auto text-center"
+      >
+        Comenzar Auditoría
+      </a>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-16 md:py-24 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Trabajo reciente
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- Listing Los Cabos -->
+        <a href="/es/case-studies/listing-los-cabos/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              Listing Los Cabos
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Bienes Raíces</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Rescatamos una plataforma React + Firebase a mitad de camino, agregamos suscripciones con Stripe y seguridad, ahora sirve a 2 ciudades desde un codebase.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>6 meses a producción</span>
+            <span>•</span>
+            <span>2 ciudades, 1 codebase</span>
+            <span>•</span>
+            <span>3 planes de suscripción</span>
+          </div>
+        </a>
+
+        <!-- Ticketing Platform -->
+        <a href="/es/case-studies/ticketing-platform/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              Ticketing de Alto Volumen
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">QA</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Construimos estrategia de testing desde cero: E2E con Playwright, tests de integración backend, gates automatizados. Releases pasaron de días a minutos.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>91 tests E2E</span>
+            <span>•</span>
+            <span>616 tests integración</span>
+            <span>•</span>
+            <span>3 gateways de pago</span>
+          </div>
+        </a>
+
+        <!-- Data Platform -->
+        <a href="/es/case-studies/data-platform/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              Plataforma de Datos Multi-Tenant
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Analytics</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Plataforma de datos full-stack con aislamiento por cliente, dashboards Superset embebidos y data agents. Cada cliente ve solo sus datos.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>3 upgrades Superset en 30 días</span>
+            <span>•</span>
+            <span>4.400 archivos merged</span>
+            <span>•</span>
+            <span>3 tenants aislados</span>
+          </div>
+        </a>
+
+        <!-- Government -->
+        <a href="/es/case-studies/government-systems/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
+              Sistemas de Gobierno Ciudad
+            </h3>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Liderazgo</span>
+          </div>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Lead técnico para sistemas de evaluación de empleados, dispensación de medicamentos y participación cívica sirviendo decenas de miles de usuarios.
+          </p>
+          <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
+            <span>7 años</span>
+            <span>•</span>
+            <span>12 sistemas</span>
+            <span>•</span>
+            <span>5 tech stacks</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center">
+        <a href="/es/case-studies/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
+          Ver los 6 casos →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Cómo trabajamos
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Llamada gratis 30 min</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Entendemos tu situación, restricciones y objetivos.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Auditoría alcance fijo</h3>
+          <p class="text-sm text-[var(--text-secondary)]">2 semanas, 1 deliverable, 1 precio. Un roadmap en el que puedes actuar.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Build o CTO fraccionario</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Updates semanales. Progreso transparente. Cambios de alcance por escrito.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
+            4
+          </div>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Es tuyo</h3>
+          <p class="text-sm text-[var(--text-secondary)]">Código, infraestructura, cuentas, documentación. Todo tuyo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-16 md:py-24 bg-[var(--bg-secondary)]">
+    <div class="mx-auto max-w-2xl px-6">
+      <blockquote class="text-center">
+        <p class="text-lg text-[var(--text-primary)] mb-6">
+          "Juan Manuel nos ayudó a renovar completamente nuestra plataforma — desde diseño hasta seguridad hasta suscripciones. No solo resolvió los problemas existentes sino que posicionó la plataforma para crecimiento futuro. Ahora tenemos control total de un sistema que realmente funciona."
+        </p>
+        <p class="font-semibold text-[var(--text-primary)]">Julio César Pérez</p>
+        <p class="text-sm text-[var(--text-tertiary)]">Project Leader · Listing Los Cabos, Mexico City</p>
+        <p class="text-xs text-[var(--color-primary-600)] mt-4">
+          <a href="https://youtu.be/cTap4d1NMDY" target="_blank" rel="noopener noreferrer" class="hover:underline">
+            Ver video →
+          </a>
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-12 text-center">
+        Preguntas
+      </h2>
+
+      <div class="space-y-6">
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            ¿Trabajan en horarios de zonas horarias estadounidenses?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Sí. Operamos en UTC-5 (equivalente a Hora Estándar del Este de EE.UU.) y nos sobreponemos con horarios de negocios estadounidenses durante todo el año.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            ¿Quién es dueño del código?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Tú. Eres dueño de todo el código, infraestructura, cuentas y documentación. Transferimos todo a tu control al final de cada engagement.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            ¿Y si ya tenemos desarrolladores?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Trabajamos al lado de tu equipo. Podemos mentorar, liderar decisiones de arquitectura, o manejar el camino crítico mientras tu equipo maneja trabajo paralelo. La auditoría aclara qué tiene sentido.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            ¿Cómo se fija el precio de la auditoría?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Fijo: USD 4.000–6.000 para una auditoría de 2 semanas, dependiendo del tamaño y complejidad de tu codebase. La tarifa se acredita hacia cualquier engagement futuro.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            ¿Firman NDAs?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Sí. NDAs mutuales estándar son parte de cada engagement.
+          </p>
+        </details>
+
+        <details class="group p-6 border border-[var(--border)] rounded-lg cursor-pointer">
+          <summary class="font-semibold text-[var(--text-primary)] flex justify-between items-center">
+            ¿Pueden trabajar con nuestro stack existente?
+            <span class="group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-[var(--text-secondary)] mt-4 text-sm">
+            Especializamos en Node.js, Next.js, React, NestJS, Python, PostgreSQL, GCP y AWS, pero hemos trabajado con Laravel, Angular, Java, .NET y muchos otros stacks. Cuéntanos qué usas y te diremos.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 md:py-24 bg-[var(--color-primary-600)] text-white">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        ¿Listo para arreglar tus sistemas?
+      </h2>
+      <p class="text-lg mb-8 opacity-95">
+        Reserva una llamada de evaluación técnica de 30 minutos. Sin pitch, sin sorpresas — solo una conversación sobre qué está roto y qué es posible.
+      </p>
+      <a
+        href="https://calendly.com/juanmanuelzaragoza/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors"
+      >
+        Reservar Llamada
+      </a>
+    </div>
+  </section>
 
   <Footer slot="footer" />
 </BaseLayout>

@@ -2,29 +2,6 @@ import { defineCollection, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 
 /**
- * Blog Collection
- * Posts in MDX with full SEO frontmatter for GEO/AEO optimization.
- */
-const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string().max(160, 'SEO descriptions should be 160 characters or less'),
-      pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      heroImage: image().optional(),
-      author: z.string().default('david-rueda'),
-      tags: z.array(z.string()).default([]),
-      draft: z.boolean().default(false),
-      // SEO/GEO specific fields
-      canonicalUrl: z.string().url().optional(),
-      noindex: z.boolean().default(false),
-      ogType: z.enum(['article', 'website']).default('article'),
-    }),
-});
-
-/**
  * Case Studies Collection
  * B2B success stories with structured data for rich results.
  */
@@ -85,4 +62,4 @@ const authors = defineCollection({
     }),
 });
 
-export const collections = { blog, 'case-studies': caseStudies, authors };
+export const collections = { 'case-studies': caseStudies, authors };

@@ -1,0 +1,44 @@
+---
+title: 'Release Confidence for a High-Volume Ticketing Platform'
+description: 'A testing strategy built from zero for a high-volume ticketing platform in Spain — backend integration and Playwright E2E, with a post-deploy gate.'
+pubDate: 2025-04-20
+client: 'A high-volume ticketing platform in Spain'
+industry: 'Events & Ticketing'
+results:
+  - metric: 'E2E coverage'
+    value: '20 → 91'
+    description: 'End-to-end tests covering the critical purchase and check-in flows.'
+  - metric: 'Integration cases'
+    value: '616'
+    description: 'Backend integration test cases across core services.'
+  - metric: 'Payments tested'
+    value: '3 gateways'
+    description: 'Three payment gateways tested end to end, including 3DS, across 3 browsers.'
+tags: ['qa automation', 'playwright', 'testing', 'payments', 'release confidence']
+draft: false
+---
+
+## Context
+
+A high-volume ticketing platform in Spain needed to ship faster without breaking the flows their revenue depends on — ticket purchase, coupons, check-in, and ticket resending.
+
+## The problem
+
+- No automated tests at all.
+- Releases were validated by hand, which was slow and error-prone.
+- The most critical flows — purchase, coupons, check-in, ticket resending — had no automation protecting them.
+
+## What we did
+
+- Built a **testing strategy from zero**: backend integration tests plus end-to-end tests with Playwright.
+- Added a **post-deploy quality gate** that runs the critical tests after every deployment.
+- Tested **three payment gateways end to end**, including 3DS authentication, across three browsers.
+- Embedded analytics with per-seller filtering so the business could see its own numbers.
+
+## Result
+
+Release validation went from days to minutes, and the team could ship changes to critical flows without holding their breath.
+
+## Stack
+
+Playwright · Backend integration testing · 3DS payment gateways · Embedded analytics

@@ -1,0 +1,42 @@
+---
+title: 'A Multi-Tenant Data Platform Where Every Client Sees Only Their Data'
+description: 'We built the backend for a multi-tenant B2B data platform — NestJS, SSO, embedded Superset with per-client isolation — and ran a major Superset migration.'
+pubDate: 2025-05-10
+client: 'A multi-tenant B2B data platform'
+industry: 'Data & Analytics'
+results:
+  - metric: 'Superset upgrade'
+    value: '4.1 → 6.1'
+    description: 'Three major versions upgraded in 30 days.'
+  - metric: 'Migration safety'
+    value: '~4,400 files'
+    description: 'Files merged; 3 silently-lost features caught by automated checks.'
+  - metric: 'Isolation'
+    value: '3 tenants'
+    description: 'Three isolated production tenants, each seeing only their own data.'
+tags: ['embedded analytics', 'nestjs', 'superset', 'multi-tenant', 'bi']
+draft: false
+---
+
+## Context
+
+A B2B data platform needed to give each of its customers a view of their own data — dashboards, reports, and AI data agents — without building a separate report for every client.
+
+## The problem
+
+Serving analytics to multiple business customers from one platform means strict isolation: every client must see only their data, and nobody else's. Doing that while keeping a shared, upgradable infrastructure is where most teams get stuck.
+
+## What we did
+
+- Built the **backend in NestJS** (in production since May 2024), with Next.js on the front end and PostgreSQL underneath.
+- Added **SSO with several corporate providers** and role-based access control (RBAC).
+- Embedded **Apache Superset with per-client isolation**, plus AI data agents.
+- Ran a **major migration of the Superset fork** — three major versions (4.1 → 6.1) in 30 days. Automated checks caught three features that would otherwise have been silently lost across ~4,400 merged files.
+
+## Result
+
+Three isolated production tenants, each seeing only their own data, on a platform that can still be upgraded safely.
+
+## Stack
+
+NestJS · Next.js · PostgreSQL · Apache Superset · SSO · RBAC

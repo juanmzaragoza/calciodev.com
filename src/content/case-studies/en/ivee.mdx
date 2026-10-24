@@ -1,0 +1,41 @@
+---
+title: 'IVEE: Making Sense of Clinical Histories Nobody Could Analyze'
+description: 'For a veterinary company, we turned clinical histories trapped in PDFs from different systems into structured, queryable data in BigQuery with dashboards.'
+pubDate: 2024-11-10
+client: 'IVEE'
+industry: 'Veterinary / Healthcare'
+results:
+  - metric: 'Input'
+    value: 'PDFs'
+    description: 'Clinical histories locked in PDFs from several different systems.'
+  - metric: 'Output'
+    value: 'BigQuery'
+    description: 'Structured, queryable data feeding dashboards.'
+  - metric: 'Partnership'
+    value: '2 years'
+    description: 'A two-year collaboration.'
+tags: ['applied ai', 'data engineering', 'bigquery', 'automation', 'veterinary']
+draft: false
+---
+
+## Context
+
+IVEE, a veterinary company, held years of clinical histories — but they were locked inside PDFs exported from several different systems, in formats nobody could analyze at scale.
+
+## The problem
+
+The information existed, but it was unusable: every source system produced a differently-shaped PDF, and there was no way to ask questions across all of them.
+
+## What we did
+
+- Built a **Cloud Function that triggers on every PDF upload**, so new documents are processed automatically.
+- Wrote a **modular parser with a format-specific module per source system**, so each PDF layout is handled correctly.
+- Loaded the extracted, structured data into **BigQuery** and built **dashboards** on top of it.
+
+## Result
+
+Clinical histories that no one could analyze became structured data IVEE can actually query and report on — the foundation for a two-year collaboration.
+
+## Stack
+
+Google Cloud Functions · Modular PDF parsing · BigQuery · Dashboards
