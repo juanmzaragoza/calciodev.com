@@ -68,7 +68,7 @@ export const ui = {
     'about.subtitle': 'Building the ultimate open-source SEO theme for Astro.',
     'about.missionTitle': 'Our Mission',
     'about.missionText':
-      "We believe that technical SEO shouldn't be an afterthought. It should be baked into the foundation of every marketing website. That's why we created Astro SEO Theme—to provide a robust, lightning-fast starting point for B2B SaaS companies.",
+      "We believe that technical SEO shouldn't be an afterthought. It should be baked into the foundation of every marketing website. That's why we created CALCIO—to provide a robust, lightning-fast starting point for B2B SaaS companies.",
     'about.openSourceTitle': 'Open Source',
     'about.openSourceText':
       'This project is 100% open-source and free to use under the MIT license. We encourage contributions from the community to help make this the best SEO template available.',
@@ -127,7 +127,7 @@ export const ui = {
     'about.subtitle': 'Creando el tema SEO open-source definitivo para Astro.',
     'about.missionTitle': 'Nuestra Misión',
     'about.missionText':
-      'Creemos que el SEO técnico no debería ser una ocurrencia tardía. Debería estar integrado en los cimientos de cada sitio web de marketing. Por eso creamos Astro SEO Theme: para proporcionar un punto de partida robusto y ultrarrápido para empresas B2B SaaS.',
+      'Creemos que el SEO técnico no debería ser una ocurrencia tardía. Debería estar integrado en los cimientos de cada sitio web de marketing. Por eso creamos CALCIO: para proporcionar un punto de partida robusto y ultrarrápido para empresas B2B SaaS.',
     'about.openSourceTitle': 'Código Abierto',
     'about.openSourceText':
       'Este proyecto es 100% open-source y de uso gratuito bajo la licencia MIT. Fomentamos las contribuciones de la comunidad para ayudar a convertir esto en la mejor plantilla SEO disponible.',

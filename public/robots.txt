@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://astro-seo-theme.vercel.app/sitemap-index.xml
+Sitemap: https://calciodev.com/sitemap-index.xml

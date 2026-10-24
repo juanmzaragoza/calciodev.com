@@ -39,7 +39,7 @@ const t = useTranslations(detectedLang);
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://astro-seo-theme.vercel.app';
 const currentUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).toString();
 const ogImageUrl = new URL(image, siteUrl).toString();
-const siteName = 'Astro SEO Theme';
+const siteName = 'CALCIO';
 const fullTitle = appendSiteName ? `${title} | ${siteName}` : title;
 const alternateLocales = getAlternateLocales(Astro.url.pathname);
 ---
@@ -65,7 +65,7 @@ const alternateLocales = getAlternateLocales(Astro.url.pathname);
     {alternateLocales.map(({ lang: altLang, href }) => (
       <link
         rel="alternate"
-        hreflang={altLang === 'en' ? 'en-US' : 'es-ES'}
+        hreflang={altLang === 'en' ? 'en-US' : 'es'}
         href={new URL(href, siteUrl).toString()}
       />
     ))}
@@ -82,7 +82,7 @@ const alternateLocales = getAlternateLocales(Astro.url.pathname);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_419' : 'en_US'} />
     {publishedTime && (
       <meta property="article:published_time" content={publishedTime.toISOString()} />
     )}

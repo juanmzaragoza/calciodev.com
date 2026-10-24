@@ -1,17 +1,29 @@
-# Astro SEO Theme
+# CALCIO
 
-> The ultimate open-source Astro theme for B2B/SaaS marketing websites with advanced SEO, GEO & AEO optimization.
+> Your company grew. Your systems didn't. CALCIO audits technical debt, rescues stalled software projects, and provides fractional CTO leadership for B2B growth-stage companies.
 
 ## About
-Astro SEO Theme is an open-source website template built with Astro, Tailwind CSS, and React. It is specifically designed to provide perfect Lighthouse scores, Semantic HTML, and Generative Engine Optimization (GEO) out of the box.
+CALCIO (CALCIO DEV LLC, registered in New Mexico, USA) is a software studio led by Juan Manuel Zaragoza. We build, automate and rescue software for companies that have outgrown their systems. We work in English and Spanish, in UTC-5, overlapping US business hours. When an engagement ends, the client owns everything: code, infrastructure, accounts and documentation.
 
-## Key Technical Features
-- Built on Astro 5.0 and Tailwind CSS v4.
-- Generates 100/100 Lighthouse SEO and Accessibility scores.
-- Implements comprehensive Schema.org JSON-LD structured data.
-- Includes a fully responsive, CSS-only megamenu and zero-JS mobile navigation.
-- Native multi-language (i18n) support with automatic `hreflang` tag generation.
+## Services
+- Architecture & Technical Debt Audit (anchor offer): a two-week, fixed-scope review of architecture, security, testing, CI/CD, dependencies, scalability and multi-tenancy, with a prioritized roadmap. USD 4,000–6,000, credited toward a follow-up engagement.
+- Project Rescue: take over half-built or abandoned software, recover code and account ownership, and ship to production.
+- Fractional CTO: technical leadership without a full-time hire — roadmap, architecture decisions, team coordination and hiring.
+- Custom Software & Integrations: bespoke systems, APIs, integrations (ERP, CRM, legacy), payments and subscriptions with Stripe.
+- Embedded Analytics & BI: dashboards inside the product with per-customer isolation (Apache Superset, BigQuery), automated reports.
+- QA Automation & Release Confidence: testing from zero, E2E with Playwright, post-deploy quality gates.
+- Applied AI: data agents, assistants and document parsing, only when it adds real value.
 
-## Resources
-- [GitHub Repository](https://github.com/druedaro/astro-seo-theme)
-- [Live Demo](https://astro-seo-theme.vercel.app)
+## Case studies
+- Listing Los Cabos (real estate): rescued an inherited React + Firebase platform, added Stripe subscriptions, one codebase for two cities.
+- High-volume ticketing platform in Spain: testing strategy from zero — 20 to 91 E2E tests, 616 backend integration cases, 3 payment gateways.
+- Multi-tenant B2B data platform: NestJS backend, embedded Superset with per-client isolation, Superset migrated 4.1 to 6.1 in 30 days.
+- Government of the City of Buenos Aires: ~7 years of technical leadership across 12 systems and 5 tech stacks.
+- IVEE (veterinary): clinical histories trapped in PDFs turned into structured data in BigQuery with dashboards.
+- New Condal (marketing, Barcelona): custom Apps Script connector pulling Google Business Profile data into Looker Studio dashboards.
+
+## Contact
+- Book a 30-minute call: https://calendly.com/juanmanuelzaragoza/30min
+- Email: hello@calciodev.com
+- LinkedIn: https://www.linkedin.com/company/calcio-dev-llc
+- Website: https://calciodev.com
