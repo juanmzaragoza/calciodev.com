@@ -2,12 +2,41 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/layout/Header.astro';
 import Footer from '../../../components/layout/Footer.astro';
+import JsonLd from '../../../components/seo/JsonLd.astro';
 
 const title = 'Servicios';
 const description = 'Auditorías técnicas, rescate de proyectos, CTO fraccionario, software a medida, analytics embebido, automatización de QA e IA aplicada para empresas B2B en crecimiento.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
+
+const services = [
+  { name: 'Auditoría de Arquitectura & Deuda Técnica', serviceType: 'Auditoría de software', description: 'Una revisión de dos semanas y alcance fijo de arquitectura, seguridad, testing, CI/CD, dependencias y escalabilidad, con un roadmap priorizado.' },
+  { name: 'Rescate de Proyectos', serviceType: 'Desarrollo de software', description: 'Tomamos software a medio hacer o abandonado, recuperamos la propiedad del código y las cuentas, y lo llevamos a producción.' },
+  { name: 'CTO Fraccionario', serviceType: 'Liderazgo técnico', description: 'Liderazgo técnico sin contratar tiempo completo: roadmap, decisiones de arquitectura, coordinación de equipo y hiring.' },
+  { name: 'Software a Medida & Integraciones', serviceType: 'Desarrollo de software', description: 'Sistemas a medida, APIs, integraciones (ERP, CRM, legacy) y pagos con Stripe.' },
+  { name: 'Analytics Embebido & BI', serviceType: 'Business intelligence', description: 'Dashboards dentro de tu producto con aislamiento por cliente (Apache Superset, BigQuery) y reportes automatizados.' },
+  { name: 'Automatización de QA & Confianza en Releases', serviceType: 'Quality assurance', description: 'Testing desde cero, E2E con Playwright y gates de calidad post-deploy.' },
+  { name: 'IA Aplicada', serviceType: 'Inteligencia artificial', description: 'Agentes de datos, asistentes y parsing de documentos, solo cuando agregan valor real.' },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {services.map((s) => (
+      <JsonLd
+        type="Service"
+        data={{
+          name: s.name,
+          description: s.description,
+          serviceType: s.serviceType,
+          url: `${siteUrl}/es/services/`,
+          providerName: 'CALCIO',
+          providerUrl: `${siteUrl}/`,
+          areaServed: ['Estados Unidos', 'Latinoamérica'],
+        }}
+      />
+    ))}
+  </Fragment>
   <Header slot="header" />
 
   <!-- Hero -->

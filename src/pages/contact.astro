@@ -2,12 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
 
 const title = 'Contact';
 const description = 'Book a 30-minute technical call, or reach us by email. We work in UTC-5, overlapping US business hours, in English and Spanish.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <JsonLd
+      type="Organization"
+      data={{
+        name: 'CALCIO',
+        url: `${siteUrl}/`,
+        logo: `${siteUrl}/logos/calcio-logo.png`,
+        description:
+          'Technical audits, project rescue and fractional CTO leadership for B2B growth-stage companies.',
+        sameAs: ['https://www.linkedin.com/company/calcio-dev-llc'],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'hello@calciodev.com',
+          contactType: 'customer service',
+          areaServed: ['US', 'Latin America'],
+          availableLanguage: ['English', 'Spanish'],
+        },
+      }}
+    />
+  </Fragment>
   <Header slot="header" />
 
   <main class="mx-auto max-w-3xl px-6 py-20 md:py-28">

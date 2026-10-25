@@ -2,12 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
 
 const title = 'About';
 const description = 'CALCIO DEV LLC is a software studio that builds, automates and rescues software for B2B growth-stage companies, led by Juan Manuel Zaragoza.';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <JsonLd
+      type="Person"
+      data={{
+        name: 'Juan Manuel Zaragoza',
+        jobTitle: 'Founder, CALCIO DEV LLC',
+        url: 'https://juanmazaragoza.com',
+        description:
+          'Software engineer with over fifteen years building and leading software, including seven years of technical leadership for public-sector systems.',
+        sameAs: [
+          'https://www.linkedin.com/in/juanmzaragoza/',
+          'https://juanmazaragoza.com',
+        ],
+      }}
+    />
+  </Fragment>
   <Header slot="header" />
 
   <!-- Hero -->

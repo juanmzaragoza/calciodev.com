@@ -66,11 +66,82 @@ export interface FAQPageData {
   items: FAQItem[];
 }
 
-type SchemaType = 'WebSite' | 'BlogPosting' | 'Organization' | 'Person' | 'FAQPage';
+export interface OfferData {
+  name?: string;
+  description?: string;
+  priceCurrency?: string;
+  price?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  url?: string;
+}
+
+export interface ProfessionalServiceData {
+  name: string;
+  url: string;
+  description?: string;
+  logo?: string;
+  image?: string;
+  sameAs?: string[];
+  areaServed?: string[];
+  knowsAbout?: string[];
+  founder?: {
+    name: string;
+    url?: string;
+    jobTitle?: string;
+    sameAs?: string[];
+  };
+  makesOffer?: OfferData;
+}
+
+export interface ServiceData {
+  name: string;
+  description?: string;
+  serviceType?: string;
+  url?: string;
+  providerName: string;
+  providerUrl: string;
+  areaServed?: string[];
+  offers?: OfferData;
+}
+
+type SchemaType =
+  | 'WebSite'
+  | 'BlogPosting'
+  | 'Organization'
+  | 'Person'
+  | 'FAQPage'
+  | 'ProfessionalService'
+  | 'Service';
 
 interface Props {
   type: SchemaType;
-  data: WebSiteData | BlogPostingData | OrganizationData | PersonData | FAQPageData;
+  data:
+    | WebSiteData
+    | BlogPostingData
+    | OrganizationData
+    | PersonData
+    | FAQPageData
+    | ProfessionalServiceData
+    | ServiceData;
+}
+
+function buildOffer(o: OfferData): Record<string, unknown> {
+  const offer: Record<string, unknown> = { '@type': 'Offer' };
+  if (o.name) offer.name = o.name;
+  if (o.description) offer.description = o.description;
+  if (o.url) offer.url = o.url;
+  if (o.priceCurrency) offer.priceCurrency = o.priceCurrency;
+  if (o.price) offer.price = o.price;
+  if (o.minPrice !== undefined || o.maxPrice !== undefined) {
+    offer.priceSpecification = {
+      '@type': 'PriceSpecification',
+      ...(o.priceCurrency && { priceCurrency: o.priceCurrency }),
+      ...(o.minPrice !== undefined && { minPrice: o.minPrice }),
+      ...(o.maxPrice !== undefined && { maxPrice: o.maxPrice }),
+    };
+  }
+  return offer;
 }
 
 const { type, data } = Astro.props;
@@ -172,6 +243,53 @@ function buildSchema(type: SchemaType, data: any): Record<string, unknown> {
           },
         })),
       };
+    }
+
+    case 'ProfessionalService': {
+      const d = data as ProfessionalServiceData;
+      const schema: Record<string, unknown> = {
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: d.name,
+        url: d.url,
+      };
+      if (d.description) schema.description = d.description;
+      if (d.logo) schema.logo = { '@type': 'ImageObject', url: d.logo };
+      if (d.image) schema.image = d.image;
+      if (d.sameAs?.length) schema.sameAs = d.sameAs;
+      if (d.areaServed?.length) schema.areaServed = d.areaServed;
+      if (d.knowsAbout?.length) schema.knowsAbout = d.knowsAbout;
+      if (d.founder) {
+        schema.founder = {
+          '@type': 'Person',
+          name: d.founder.name,
+          ...(d.founder.jobTitle && { jobTitle: d.founder.jobTitle }),
+          ...(d.founder.url && { url: d.founder.url }),
+          ...(d.founder.sameAs?.length && { sameAs: d.founder.sameAs }),
+        };
+      }
+      if (d.makesOffer) schema.makesOffer = buildOffer(d.makesOffer);
+      return schema;
+    }
+
+    case 'Service': {
+      const d = data as ServiceData;
+      const schema: Record<string, unknown> = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: d.name,
+        provider: {
+          '@type': 'Organization',
+          name: d.providerName,
+          url: d.providerUrl,
+        },
+      };
+      if (d.description) schema.description = d.description;
+      if (d.serviceType) schema.serviceType = d.serviceType;
+      if (d.url) schema.url = d.url;
+      if (d.areaServed?.length) schema.areaServed = d.areaServed;
+      if (d.offers) schema.offers = buildOffer(d.offers);
+      return schema;
     }
   }
 }

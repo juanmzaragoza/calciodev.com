@@ -2,12 +2,37 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
 
 const title = 'Architecture & Technical Debt Audit';
 const description = 'A two-week, fixed-scope audit of your architecture, security, testing, CI/CD and scalability — with a prioritized roadmap. USD 4,000–6,000, credited toward a follow-up.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <JsonLd
+      type="Service"
+      data={{
+        name: 'Architecture & Technical Debt Audit',
+        description:
+          'A two-week, fixed-scope review of architecture, security, testing, CI/CD, dependencies, scalability and multi-tenancy, delivered with a prioritized roadmap.',
+        serviceType: 'Software audit',
+        url: `${siteUrl}/audit/`,
+        providerName: 'CALCIO',
+        providerUrl: `${siteUrl}/`,
+        areaServed: ['United States', 'Latin America'],
+        offers: {
+          name: 'Architecture & Technical Debt Audit',
+          priceCurrency: 'USD',
+          minPrice: 4000,
+          maxPrice: 6000,
+          url: `${siteUrl}/audit/`,
+        },
+      }}
+    />
+  </Fragment>
   <Header slot="header" />
 
   <!-- Hero -->

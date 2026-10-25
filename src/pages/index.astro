@@ -2,12 +2,53 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
 
 const title = 'Technical Audits & Software Rescue';
 const description = 'Your company grew. Your systems didn\'t. We audit technical debt, rescue stalled projects, and provide fractional CTO leadership for B2B growth-stage companies.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <JsonLd
+      type="ProfessionalService"
+      data={{
+        name: 'CALCIO',
+        url: `${siteUrl}/`,
+        description:
+          'Technical audits, project rescue and fractional CTO leadership for B2B growth-stage companies.',
+        logo: `${siteUrl}/logos/calcio-logo.png`,
+        sameAs: ['https://www.linkedin.com/company/calcio-dev-llc'],
+        areaServed: ['United States', 'Latin America'],
+        knowsAbout: [
+          'Software architecture audit',
+          'Technical debt',
+          'Project rescue',
+          'Fractional CTO',
+          'Custom software development',
+          'Embedded analytics',
+          'QA automation',
+          'Applied AI',
+        ],
+        founder: {
+          name: 'Juan Manuel Zaragoza',
+          jobTitle: 'Founder',
+          url: 'https://juanmazaragoza.com',
+          sameAs: ['https://www.linkedin.com/in/juanmzaragoza/'],
+        },
+        makesOffer: {
+          name: 'Architecture & Technical Debt Audit',
+          description: 'Two-week, fixed-scope technical audit with a prioritized roadmap.',
+          priceCurrency: 'USD',
+          minPrice: 4000,
+          maxPrice: 6000,
+          url: `${siteUrl}/audit/`,
+        },
+      }}
+    />
+  </Fragment>
   <Header slot="header" />
   <!-- Hero -->
   <section class="relative overflow-hidden bg-[var(--bg)] pt-20 pb-16 md:pt-32 md:pb-24">

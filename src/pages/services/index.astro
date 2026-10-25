@@ -2,12 +2,41 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
 
 const title = 'Services';
 const description = 'Technical audits, project rescue, fractional CTO, custom software, embedded analytics, QA automation and applied AI for B2B growth-stage companies.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
+
+const services = [
+  { name: 'Architecture & Technical Debt Audit', serviceType: 'Software audit', description: 'A two-week, fixed-scope review of architecture, security, testing, CI/CD, dependencies and scalability, with a prioritized roadmap.' },
+  { name: 'Project Rescue', serviceType: 'Software development', description: 'Take over half-built or abandoned software, recover code and account ownership, and ship to production.' },
+  { name: 'Fractional CTO', serviceType: 'Technology leadership', description: 'Technical leadership without a full-time hire: roadmap, architecture decisions, team coordination and hiring.' },
+  { name: 'Custom Software & Integrations', serviceType: 'Software development', description: 'Bespoke systems, APIs, integrations (ERP, CRM, legacy) and payments with Stripe.' },
+  { name: 'Embedded Analytics & BI', serviceType: 'Business intelligence', description: 'Dashboards inside your product with per-customer isolation (Apache Superset, BigQuery) and automated reports.' },
+  { name: 'QA Automation & Release Confidence', serviceType: 'Quality assurance', description: 'Testing from zero, E2E with Playwright and post-deploy quality gates.' },
+  { name: 'Applied AI', serviceType: 'Artificial intelligence', description: 'Data agents, assistants and document parsing, only when they add real value.' },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {services.map((s) => (
+      <JsonLd
+        type="Service"
+        data={{
+          name: s.name,
+          description: s.description,
+          serviceType: s.serviceType,
+          url: `${siteUrl}/services/`,
+          providerName: 'CALCIO',
+          providerUrl: `${siteUrl}/`,
+          areaServed: ['United States', 'Latin America'],
+        }}
+      />
+    ))}
+  </Fragment>
   <Header slot="header" />
 
   <!-- Hero -->

@@ -2,12 +2,35 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
 
 const title = 'Contacto';
 const description = 'Reservá una llamada técnica de 30 minutos o escribinos por email. Trabajamos en UTC-5, sobreponiéndonos al horario de negocios de EE.UU., en inglés y español.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <JsonLd
+      type="Organization"
+      data={{
+        name: 'CALCIO',
+        url: `${siteUrl}/`,
+        logo: `${siteUrl}/logos/calcio-logo.png`,
+        description:
+          'Auditorías técnicas, rescate de proyectos y liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.',
+        sameAs: ['https://www.linkedin.com/company/calcio-dev-llc'],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'hello@calciodev.com',
+          contactType: 'customer service',
+          areaServed: ['US', 'Latin America'],
+          availableLanguage: ['English', 'Spanish'],
+        },
+      }}
+    />
+  </Fragment>
   <Header slot="header" />
 
   <main class="mx-auto max-w-3xl px-6 py-20 md:py-28">

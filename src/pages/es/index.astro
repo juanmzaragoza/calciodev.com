@@ -2,12 +2,53 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
 
 const title = 'Auditorías Técnicas y Rescate de Software';
 const description = 'Tu empresa creció. Tus sistemas no. Auditamos deuda técnica, rescatamos proyectos estancados y proporcionamos liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <JsonLd
+      type="ProfessionalService"
+      data={{
+        name: 'CALCIO',
+        url: `${siteUrl}/es/`,
+        description:
+          'Auditorías técnicas, rescate de proyectos y liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.',
+        logo: `${siteUrl}/logos/calcio-logo.png`,
+        sameAs: ['https://www.linkedin.com/company/calcio-dev-llc'],
+        areaServed: ['Estados Unidos', 'Latinoamérica'],
+        knowsAbout: [
+          'Auditoría de arquitectura de software',
+          'Deuda técnica',
+          'Rescate de proyectos',
+          'CTO fraccionario',
+          'Desarrollo de software a medida',
+          'Analytics embebido',
+          'Automatización de QA',
+          'IA aplicada',
+        ],
+        founder: {
+          name: 'Juan Manuel Zaragoza',
+          jobTitle: 'Fundador',
+          url: 'https://juanmazaragoza.com',
+          sameAs: ['https://www.linkedin.com/in/juanmzaragoza/'],
+        },
+        makesOffer: {
+          name: 'Auditoría de Arquitectura & Deuda Técnica',
+          description: 'Auditoría técnica de dos semanas y alcance fijo con un roadmap priorizado.',
+          priceCurrency: 'USD',
+          minPrice: 4000,
+          maxPrice: 6000,
+          url: `${siteUrl}/es/audit/`,
+        },
+      }}
+    />
+  </Fragment>
   <Header slot="header" />
   <!-- Hero -->
   <section class="relative overflow-hidden bg-[var(--bg)] pt-20 pb-16 md:pt-32 md:pb-24">
