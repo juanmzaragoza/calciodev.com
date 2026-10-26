@@ -1,0 +1,81 @@
+---
+/**
+ * AuditMockup.astro — stylized preview of the audit deliverable
+ * (findings report with severity + a mini roadmap). Pure CSS/SVG, no real data.
+ */
+interface Props {
+  lang?: 'en' | 'es';
+}
+const { lang = 'en' } = Astro.props;
+
+const t = {
+  en: {
+    file: 'audit-report.pdf',
+    findings: 'Findings',
+    roadmap: 'Prioritized roadmap',
+    rows: ['Cross-tenant data access in BaaS rules', 'No CI gate on the main branch', 'Dependencies mostly current'],
+    phases: ['Now', 'Next', 'Later'],
+  },
+  es: {
+    file: 'reporte-auditoria.pdf',
+    findings: 'Hallazgos',
+    roadmap: 'Roadmap priorizado',
+    rows: ['Acceso cross-tenant en reglas de BaaS', 'Sin gate de CI en la rama main', 'Dependencias mayormente al día'],
+    phases: ['Ahora', 'Luego', 'Después'],
+  },
+}[lang];
+
+const sev = ['bg-red-500', 'bg-[var(--color-accent-500)]', 'bg-[var(--color-primary-500)]'];
+---
+
+<div class="mx-auto w-full max-w-md overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg)] shadow-lg">
+  <!-- window bar -->
+  <div class="flex items-center gap-1.5 border-b border-[var(--border)] bg-[var(--bg-secondary)] px-4 py-3">
+    <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+    <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
+    <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
+    <span class="ml-3 text-xs text-[var(--text-tertiary)]">{t.file}</span>
+  </div>
+
+  <div class="space-y-5 p-6">
+    <!-- report title -->
+    <div>
+      <div class="h-3 w-44 rounded bg-[var(--color-primary-500)]"></div>
+      <div class="mt-2 h-2 w-28 rounded bg-[var(--border)]"></div>
+    </div>
+
+    <!-- findings -->
+    <div>
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">{t.findings}</p>
+      <ul class="space-y-2">
+        {t.rows.map((row, i) => (
+          <li class="flex items-center gap-2.5">
+            <span class={`h-2.5 w-2.5 shrink-0 rounded-full ${sev[i]}`}></span>
+            <span class="text-xs text-[var(--text-secondary)]">{row}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- mini architecture diagram -->
+    <svg viewBox="0 0 320 90" class="w-full" role="img" aria-hidden="true">
+      <rect x="6" y="30" width="70" height="30" rx="5" fill="none" stroke="var(--color-primary-500)" stroke-width="1.5" />
+      <rect x="125" y="12" width="70" height="30" rx="5" fill="none" stroke="var(--border)" stroke-width="1.5" />
+      <rect x="125" y="48" width="70" height="30" rx="5" fill="none" stroke="var(--border)" stroke-width="1.5" />
+      <rect x="244" y="30" width="70" height="30" rx="5" fill="none" stroke="var(--color-accent-500)" stroke-width="1.5" />
+      <path d="M76 45 H110 M110 45 V27 H125 M110 45 V63 H125 M195 27 H228 V45 H244 M195 63 H228 V45" fill="none" stroke="var(--border)" stroke-width="1.5" />
+    </svg>
+
+    <!-- roadmap phases -->
+    <div>
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">{t.roadmap}</p>
+      <div class="grid grid-cols-3 gap-2">
+        {t.phases.map((phase, i) => (
+          <div class={`rounded-lg p-2 text-center text-[10px] font-semibold ${i === 0 ? 'bg-[var(--color-primary-500)] text-white' : 'bg-[var(--bg-secondary)] text-[var(--text-tertiary)]'}`}>
+            {phase}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

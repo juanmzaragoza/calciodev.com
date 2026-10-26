@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/layout/Header.astro';
 import Footer from '../../../components/layout/Footer.astro';
 import JsonLd from '../../../components/seo/JsonLd.astro';
+import Icon from '../../../components/ui/Icon.astro';
 
 const title = 'Servicios';
 const description = 'Auditorías técnicas, rescate de proyectos, CTO fraccionario, software a medida, analytics embebido, automatización de QA e IA aplicada para empresas B2B en crecimiento.';
@@ -80,6 +81,7 @@ const services = [
       <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Build (Construir)</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <Icon name="life-buoy" class="mb-4" />
           <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Rescate de Proyectos</h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
             Tomamos software a medio hacer o abandonado, recuperamos la propiedad del código y las cuentas, y lo llevamos a producción. Terminás siendo dueño de lo que hace funcionar tu negocio.
@@ -87,6 +89,7 @@ const services = [
           <a href="/es/case-studies/listing-los-cabos/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver Listing Los Cabos →</a>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <Icon name="code" class="mb-4" />
           <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Software a Medida & Integraciones</h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
             Sistemas hechos a medida, APIs e integraciones con las herramientas que ya usás (ERP, CRM, legacy). Pagos y suscripciones con Stripe.
@@ -103,6 +106,7 @@ const services = [
       <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Connect (Conectar)</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="workflow" class="mb-4" />
           <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Automatización & Integraciones</h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
             Procesos que se ejecutan solos: conectores a medida, Apps Script, bots de WhatsApp y Manychat, y flujos de datos que reemplazan el reporte que alguien arma a mano cada mes.
@@ -110,6 +114,7 @@ const services = [
           <a href="/es/case-studies/new-condal/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver New Condal →</a>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="sparkles" class="mb-4" />
           <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">IA Aplicada</h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
             Solo cuando agrega valor real: agentes de datos, asistentes y parsing de documentos que convierte PDFs que nadie podía analizar en datos estructurados y consultables.
@@ -126,6 +131,7 @@ const services = [
       <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Clarify (Aclarar)</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <Icon name="bar-chart-3" class="mb-4" />
           <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Analytics Embebido & BI</h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
             Dashboards dentro de tu producto, con aislamiento por cliente para que cada uno vea solo sus datos. Apache Superset, BigQuery y reportes automatizados.
@@ -133,6 +139,7 @@ const services = [
           <a href="/es/case-studies/data-platform/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver la plataforma de datos →</a>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <Icon name="shield-check" class="mb-4" />
           <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Automatización de QA & Confianza en Releases</h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
             Una estrategia de testing desde cero: E2E con Playwright, tests de integración backend y gates de calidad post-deploy — para que los releases pasen de días a minutos.
@@ -148,6 +155,7 @@ const services = [
     <div class="mx-auto max-w-4xl px-6">
       <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Lead (Liderar)</h2>
       <div class="p-6 border border-[var(--border)] rounded-lg max-w-2xl">
+        <Icon name="compass" class="mb-4" />
         <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">CTO Fraccionario</h3>
         <p class="text-sm text-[var(--text-secondary)] mb-4">
           Liderazgo técnico sin contratar un CTO full-time: roadmap, decisiones de arquitectura, coordinación de equipo y hiring. Lideramos sistemas críticos durante años — incluyendo los de un gobierno de ciudad.

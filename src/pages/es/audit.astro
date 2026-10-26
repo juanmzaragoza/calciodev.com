@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
 import JsonLd from '../../components/seo/JsonLd.astro';
+import Icon from '../../components/ui/Icon.astro';
+import AuditMockup from '../../components/ui/AuditMockup.astro';
 
 const title = 'Auditoría de Arquitectura & Deuda Técnica';
 const description = 'Una auditoría de dos semanas y alcance fijo de tu arquitectura, seguridad, testing, CI/CD y escalabilidad — con un roadmap priorizado. USD 4.000–6.000, acreditable.';
@@ -75,26 +77,32 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-8 text-center">Qué revisamos</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="network" class="mb-3" />
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Arquitectura & escalabilidad</h3>
           <p class="text-sm text-[var(--text-secondary)]">Cómo está estructurado el sistema, dónde se va a romper bajo carga y qué haría falta para crecer.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="lock" class="mb-3" />
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Seguridad</h3>
           <p class="text-sm text-[var(--text-secondary)]">Autenticación, reglas de BaaS, manejo de secrets y los huecos que suelen pasar inadvertidos.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-3" />
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Testing & CI/CD</h3>
           <p class="text-sm text-[var(--text-secondary)]">Qué está cubierto, qué no, y qué tan riesgoso es hoy cada release.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="package" class="mb-3" />
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Dependencias & riesgo de upgrade</h3>
           <p class="text-sm text-[var(--text-secondary)]">Dependencias desactualizadas o riesgosas, y qué implicaría de verdad actualizarlas.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="users" class="mb-3" />
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Multi-tenancy & aislamiento</h3>
           <p class="text-sm text-[var(--text-secondary)]">Si los datos de cada cliente están realmente aislados, y por dónde se filtran los límites.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="alert-triangle" class="mb-3" />
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Deuda técnica</h3>
           <p class="text-sm text-[var(--text-secondary)]">Los atajos que te están frenando, ordenados por lo que te cuestan.</p>
         </div>
@@ -104,26 +112,29 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
 
   <!-- What you get -->
   <section class="py-12 md:py-16 bg-[var(--bg-secondary)]">
-    <div class="mx-auto max-w-3xl px-6">
-      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-8 text-center">Qué te llevás</h2>
-      <ul class="space-y-4">
-        <li class="flex gap-3">
-          <span class="text-[var(--color-primary-600)] font-bold">→</span>
-          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un reporte de hallazgos</span> — qué está roto, qué es riesgoso y qué está bien, en lenguaje claro.</p>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-[var(--color-primary-600)] font-bold">→</span>
-          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un roadmap priorizado</span> — ordenado por impacto y esfuerzo, para que sepas qué hacer primero.</p>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-[var(--color-primary-600)] font-bold">→</span>
-          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un walkthrough</span> — una sesión en vivo para recorrer los hallazgos y responder preguntas.</p>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-[var(--color-primary-600)] font-bold">→</span>
-          <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Sin lock-in</span> — el roadmap es tuyo. Usalo con nosotros, con tu equipo o con quien quieras.</p>
-        </li>
-      </ul>
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-10 text-center">Qué te llevás</h2>
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <span class="text-[var(--color-primary-600)] font-bold">→</span>
+            <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un reporte de hallazgos</span> — qué está roto, qué es riesgoso y qué está bien, en lenguaje claro.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-[var(--color-primary-600)] font-bold">→</span>
+            <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un roadmap priorizado</span> — ordenado por impacto y esfuerzo, para que sepas qué hacer primero.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-[var(--color-primary-600)] font-bold">→</span>
+            <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Un walkthrough</span> — una sesión en vivo para recorrer los hallazgos y responder preguntas.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-[var(--color-primary-600)] font-bold">→</span>
+            <p class="text-[var(--text-secondary)]"><span class="font-semibold text-[var(--text-primary)]">Sin lock-in</span> — el roadmap es tuyo. Usalo con nosotros, con tu equipo o con quien quieras.</p>
+          </li>
+        </ul>
+        <AuditMockup lang="es" />
+      </div>
     </div>
   </section>
 

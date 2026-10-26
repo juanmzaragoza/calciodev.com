@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
+import Icon from '../components/ui/Icon.astro';
 
 const title = 'Technical Audits & Software Rescue';
 const description = 'Your company grew. Your systems didn\'t. We audit technical debt, rescue stalled projects, and provide fractional CTO leadership for B2B growth-stage companies.';
@@ -51,30 +52,43 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
   </Fragment>
   <Header slot="header" />
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-[var(--bg)] pt-20 pb-16 md:pt-32 md:pb-24">
-    <div class="mx-auto max-w-4xl px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-        Your company grew.<br />
-        <span class="text-[var(--color-primary-600)]">Your systems didn't.</span>
-      </h1>
-      <p class="text-lg md:text-xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
-        We rescue unstable infrastructure, audit technical debt, and provide fractional CTO leadership for B2B companies in growth stage.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <a
-          href="https://calendly.com/juanmanuelzaragoza/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors"
-        >
-          Book a 30-min Call
-        </a>
-        <a
-          href="/audit/"
-          class="inline-flex items-center justify-center px-6 py-3 border border-[var(--border)] text-[var(--text-primary)] font-semibold rounded-lg hover:bg-[var(--bg-secondary)] transition-colors"
-        >
-          See the Audit
-        </a>
+  <section class="relative overflow-hidden bg-[#0d0d0d] pt-24 pb-20 md:pt-32 md:pb-32">
+    <img
+      src="/hero/home-hero.webp"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover object-right select-none"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/90 to-[#0d0d0d]/40 md:to-transparent"></div>
+    <div class="relative mx-auto max-w-6xl px-6">
+      <div class="max-w-xl">
+        <div class="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-medium text-white/70 backdrop-blur-sm">
+          <span class="mr-2 flex h-2 w-2 rounded-full bg-[var(--color-primary-400)]"></span>
+          Technical audits · Project rescue · Fractional CTO
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+          Your company grew.<br />
+          <span class="bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-accent-400)] bg-clip-text text-transparent">Your systems didn't.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/75 mb-8 max-w-lg">
+          We rescue unstable infrastructure, audit technical debt, and provide fractional CTO leadership for B2B companies in growth stage.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="https://calendly.com/juanmanuelzaragoza/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors"
+          >
+            Book a 30-min Call
+          </a>
+          <a
+            href="/audit/"
+            class="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+          >
+            See the Audit
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -83,14 +97,15 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
   <section class="border-t border-b border-[var(--border)] bg-[var(--bg-secondary)] py-8 md:py-12">
     <div class="mx-auto max-w-7xl px-6">
       <p class="text-center text-sm text-[var(--text-secondary)] mb-6">
-        Trusted by teams in real estate, ticketing, data platforms and government
+        Trusted by teams in real estate, ticketing, data platforms, marketing and government
       </p>
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-sm text-[var(--text-tertiary)]">
-        <div>Listing Los Cabos</div>
-        <div>New Condal</div>
-        <div>IVEE</div>
-        <div>Amedia Social</div>
-        <div>GCBA</div>
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-base font-semibold text-[var(--text-tertiary)]">
+        <span>Listing Los Cabos</span>
+        <span>New Condal</span>
+        <span>Datakimia</span>
+        <span>Viventa</span>
+        <span>IVEE</span>
+        <span>GCBA</span>
       </div>
     </div>
   </section>
@@ -103,18 +118,22 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       </h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="ghost" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">The previous developer left</p>
           <p class="text-[var(--text-secondary)] text-sm">and the project is half-built, with no one who understands the architecture.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="lock" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">We don't own our code</p>
           <p class="text-[var(--text-secondary)] text-sm">The previous vendor locked us out. We need control of our infrastructure.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="dice-5" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">Every release is a gamble</p>
           <p class="text-[var(--text-secondary)] text-sm">No tests, no CI/CD, manual deployments. We're afraid to ship.</p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="map" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">We need to scale, but first...</p>
           <p class="text-[var(--text-secondary)] text-sm">we need to know what's broken. We need a roadmap, not a rewrite.</p>
         </div>
@@ -132,13 +151,19 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       <div class="mb-16">
         <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Build</h3>
         <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Custom Software & Integrations</h4>
-            <p class="text-sm text-[var(--text-secondary)]">Systems to measure, APIs, integrations with existing tools (ERP, CRM, legacy), payments with Stripe.</p>
+          <div class="flex gap-4">
+            <Icon name="code" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Custom Software & Integrations</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Systems to measure, APIs, integrations with existing tools (ERP, CRM, legacy), payments with Stripe.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Project Rescue</h4>
-            <p class="text-sm text-[var(--text-secondary)]">Take over a stalled project, recover code ownership and infrastructure control, ship to production.</p>
+          <div class="flex gap-4">
+            <Icon name="life-buoy" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Project Rescue</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Take over a stalled project, recover code ownership and infrastructure control, ship to production.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -146,9 +171,12 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       <div class="mb-16">
         <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Connect</h3>
         <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automation & Integrations</h4>
-            <p class="text-sm text-[var(--text-secondary)]">Processes that run on their own: WhatsApp and Manychat bots, Apps Script, tool integrations.</p>
+          <div class="flex gap-4">
+            <Icon name="workflow" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automation & Integrations</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Processes that run on their own: WhatsApp and Manychat bots, Apps Script, tool integrations.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -156,22 +184,31 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       <div class="mb-16">
         <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Clarify</h3>
         <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Embedded Analytics & BI</h4>
-            <p class="text-sm text-[var(--text-secondary)]">Dashboards inside your product, with per-customer isolation. BigQuery, Superset, automated reports.</p>
+          <div class="flex gap-4">
+            <Icon name="bar-chart-3" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Embedded Analytics & BI</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Dashboards inside your product, with per-customer isolation. BigQuery, Superset, automated reports.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA Automation & Release Confidence</h4>
-            <p class="text-sm text-[var(--text-secondary)]">Testing strategy from zero. E2E with Playwright, quality gates post-deploy, fewer surprises.</p>
+          <div class="flex gap-4">
+            <Icon name="shield-check" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA Automation & Release Confidence</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Testing strategy from zero. E2E with Playwright, quality gates post-deploy, fewer surprises.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="mb-16">
         <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Lead</h3>
-        <div>
-          <h4 class="font-semibold text-[var(--text-primary)] mb-2">Fractional CTO</h4>
-          <p class="text-sm text-[var(--text-secondary)]">Technical leadership without hiring full-time. Roadmap, architecture decisions, team coordination, hiring.</p>
+        <div class="flex gap-4">
+          <Icon name="compass" />
+          <div>
+            <h4 class="font-semibold text-[var(--text-primary)] mb-2">Fractional CTO</h4>
+            <p class="text-sm text-[var(--text-secondary)]">Technical leadership without hiring full-time. Roadmap, architecture decisions, team coordination, hiring.</p>
+          </div>
         </div>
       </div>
 
@@ -369,8 +406,20 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         <p class="text-lg text-[var(--text-primary)] mb-6">
           "Juan Manuel helped us overhaul our entire platform — from design to security to subscriptions. He not only resolved the existing issues but positioned the platform for future growth. We now have full control of a system that genuinely works."
         </p>
-        <p class="font-semibold text-[var(--text-primary)]">Julio César Pérez</p>
-        <p class="text-sm text-[var(--text-tertiary)]">Project Leader · Listing Los Cabos, Mexico City</p>
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <img
+            src="/testimonials/julio-cesar-perez.webp"
+            alt="Julio César Pérez"
+            width="56"
+            height="56"
+            loading="lazy"
+            class="h-14 w-14 rounded-full object-cover border border-[var(--border)]"
+          />
+          <div class="text-left">
+            <p class="font-semibold text-[var(--text-primary)]">Julio César Pérez</p>
+            <p class="text-sm text-[var(--text-tertiary)]">Project Leader · Listing Los Cabos, Mexico City</p>
+          </div>
+        </div>
         <p class="text-xs text-[var(--color-primary-600)] mt-4">
           <a href="https://youtu.be/cTap4d1NMDY" target="_blank" rel="noopener noreferrer" class="hover:underline">
             Watch video →

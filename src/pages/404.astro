@@ -18,7 +18,13 @@ import Footer from '../components/layout/Footer.astro';
     }
   </script>
 
-  <main class="flex min-h-[70vh] flex-col items-center justify-center px-6 text-center">
+  <main class="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden px-6 text-center">
+    <img
+      src="/favicon.png"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute -z-10 w-[60vmin] max-w-none opacity-[0.06] blur-[1px] select-none"
+    />
     <p class="font-display text-base font-semibold text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]">404</p>
     <h1 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-5xl">
       Page not found
