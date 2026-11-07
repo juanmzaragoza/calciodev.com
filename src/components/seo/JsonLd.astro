@@ -91,7 +91,7 @@ export interface ProfessionalServiceData {
     jobTitle?: string;
     sameAs?: string[];
   };
-  makesOffer?: OfferData;
+  makesOffer?: OfferData | OfferData[];
 }
 
 export interface ServiceData {
@@ -268,7 +268,11 @@ function buildSchema(type: SchemaType, data: any): Record<string, unknown> {
           ...(d.founder.sameAs?.length && { sameAs: d.founder.sameAs }),
         };
       }
-      if (d.makesOffer) schema.makesOffer = buildOffer(d.makesOffer);
+      if (d.makesOffer) {
+        schema.makesOffer = Array.isArray(d.makesOffer)
+          ? d.makesOffer.map(buildOffer)
+          : buildOffer(d.makesOffer);
+      }
       return schema;
     }
 

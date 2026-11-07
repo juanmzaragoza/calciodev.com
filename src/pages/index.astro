@@ -5,8 +5,8 @@ import Footer from '../components/layout/Footer.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 import Icon from '../components/ui/Icon.astro';
 
-const title = 'Software Development & QA Automation';
-const description = 'CALCIO builds software and delivers test automation for growing teams. We rescue half-built projects, audit technical debt, and make sure releases stop being a gamble.';
+const title = 'Software Development & QA Automation for Growing Teams | CALCIO';
+const description = 'CALCIO is a nearshore software development and QA automation team. Playwright E2E test suites, architecture audits and project rescue for B2B SaaS teams — remote, US time zones.';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
@@ -28,8 +28,15 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           'Technical debt',
           'Project rescue',
           'Custom software development',
-          'Embedded analytics',
+          'React development',
+          'Next.js development',
+          'Node.js development',
+          'Laravel development',
           'QA automation',
+          'Playwright E2E testing',
+          'CI/CD quality gates',
+          'Nearshore software development',
+          'Embedded analytics',
           'Applied AI',
         ],
         founder: {
@@ -38,14 +45,34 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           url: 'https://juanmazaragoza.com',
           sameAs: ['https://www.linkedin.com/in/juanmzaragoza/'],
         },
-        makesOffer: {
-          name: 'Architecture & Technical Debt Audit',
-          description: 'Two-week, fixed-scope technical audit with a prioritized roadmap.',
-          priceCurrency: 'USD',
-          minPrice: 1000,
-          maxPrice: 2000,
-          url: `${siteUrl}/audit/`,
-        },
+        makesOffer: [
+          {
+            name: 'Architecture & Technical Debt Audit',
+            description: 'Two-week, fixed-scope technical audit with a prioritized roadmap.',
+            priceCurrency: 'USD',
+            minPrice: 1000,
+            maxPrice: 2000,
+            url: `${siteUrl}/audit/`,
+          },
+          {
+            name: 'QA & Release Risk Audit',
+            description: 'Fixed-scope review of test suite, pipeline and critical flows. Risk map + prioritized test plan.',
+            priceCurrency: 'USD',
+            url: `${siteUrl}/services/`,
+          },
+          {
+            name: 'Critical Flows Suite',
+            description: 'Playwright E2E tests for critical flows wired into CI as a quality gate.',
+            priceCurrency: 'USD',
+            url: `${siteUrl}/services/`,
+          },
+          {
+            name: 'QA Retainer',
+            description: 'Ongoing QA coverage, flakiness control and new-feature tests.',
+            priceCurrency: 'USD',
+            url: `${siteUrl}/services/`,
+          },
+        ],
       }}
     />
   </Fragment>
@@ -54,7 +81,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
   <section class="relative overflow-hidden bg-[#0d0d0d] pt-24 pb-20 md:pt-32 md:pb-32">
     <img
       src="/hero/home-hero.webp"
-      alt=""
+      alt="CALCIO — software development and QA automation team working remotely"
       aria-hidden="true"
       class="pointer-events-none absolute inset-0 h-full w-full object-cover object-right select-none"
     />
