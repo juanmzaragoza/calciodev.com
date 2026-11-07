@@ -6,17 +6,21 @@ import JsonLd from '../../../components/seo/JsonLd.astro';
 import Icon from '../../../components/ui/Icon.astro';
 
 const title = 'Servicios';
-const description = 'Auditorías técnicas, rescate de proyectos, CTO fraccionario, software a medida, analytics embebido, automatización de QA e IA aplicada para empresas B2B en crecimiento.';
+const description = 'Desarrollo de software, QA automation, rescate de proyectos, auditorías de arquitectura, analítica embebida e IA aplicada para equipos B2B en crecimiento.';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 
 const services = [
-  { name: 'Auditoría de Arquitectura & Deuda Técnica', serviceType: 'Auditoría de software', description: 'Una revisión de dos semanas y alcance fijo de arquitectura, seguridad, testing, CI/CD, dependencias y escalabilidad, con un roadmap priorizado.' },
+  { name: 'Auditoría de Arquitectura & Deuda Técnica', serviceType: 'Auditoría de software', description: 'Una revisión de dos semanas y alcance fijo de arquitectura, seguridad, testing, CI/CD, dependencias y escalabilidad, con un roadmap priorizado. USD 1.000–2.000.' },
   { name: 'Rescate de Proyectos', serviceType: 'Desarrollo de software', description: 'Tomamos software a medio hacer o abandonado, recuperamos la propiedad del código y las cuentas, y lo llevamos a producción.' },
-  { name: 'CTO Fraccionario', serviceType: 'Liderazgo técnico', description: 'Liderazgo técnico sin contratar tiempo completo: roadmap, decisiones de arquitectura, coordinación de equipo y hiring.' },
   { name: 'Software a Medida & Integraciones', serviceType: 'Desarrollo de software', description: 'Sistemas a medida, APIs, integraciones (ERP, CRM, legacy) y pagos con Stripe.' },
   { name: 'Analytics Embebido & BI', serviceType: 'Business intelligence', description: 'Dashboards dentro de tu producto con aislamiento por cliente (Apache Superset, BigQuery) y reportes automatizados.' },
   { name: 'Automatización de QA & Confianza en Releases', serviceType: 'Quality assurance', description: 'Testing desde cero, E2E con Playwright y gates de calidad post-deploy.' },
+  { name: 'Auditoría QA y Riesgo de Release', serviceType: 'Quality assurance', description: '5 a 7 días hábiles. Revisión de suite, pipeline y flujos críticos sin cobertura. Mapa de riesgos + plan priorizado. USD 1.200, acreditable a Critical Flows Suite.' },
+  { name: 'Critical Flows Suite', serviceType: 'Quality assurance', description: '3 a 4 semanas. Suite Playwright de 3 a 5 flujos críticos, integrada al CI como quality gate. USD 2.000.' },
+  { name: 'QA Retainer', serviceType: 'Quality assurance', description: 'Mantenimiento de suite, flakiness y nuevas features. Hasta 40 h/mes. USD 1.200/mes.' },
+  { name: 'Contractor', serviceType: 'Desarrollo de software', description: 'Desarrollo y/o QA, part-time o full-time. USD 25/h.' },
+  { name: 'Desarrollo de Software a Medida', serviceType: 'Desarrollo de software', description: 'Aplicaciones web full-stack a medida. React, Next.js, Node.js, Laravel. Precio definido tras scoping.' },
   { name: 'IA Aplicada', serviceType: 'Inteligencia artificial', description: 'Agentes de datos, asistentes y parsing de documentos, solo cuando agregan valor real.' },
 ];
 ---
@@ -47,7 +51,7 @@ const services = [
         Qué hacemos
       </h1>
       <p class="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-        Construimos, conectamos y aclaramos software para empresas que superaron sus propios sistemas. Empezá con una auditoría de alcance fijo y, desde ahí, construimos o lideramos.
+        CALCIO construye software y automatiza pruebas para equipos en crecimiento. Rescatamos proyectos incompletos, auditamos deuda técnica y nos aseguramos de que los releases dejen de ser una apuesta.
       </p>
     </div>
   </section>
@@ -61,7 +65,7 @@ const services = [
           Auditoría de Arquitectura & Deuda Técnica
         </h2>
         <p class="text-[var(--text-secondary)] mb-6 max-w-2xl">
-          Dos semanas, alcance fijo. Revisamos arquitectura, seguridad, tests, CI/CD, dependencias, escalabilidad y multi-tenancy, y te entregamos un roadmap priorizado. USD 4.000–6.000, acreditable a un contrato posterior.
+          Dos semanas, alcance fijo. Revisamos arquitectura, seguridad, tests, CI/CD, dependencias, escalabilidad y multi-tenancy, y te entregamos un roadmap priorizado. USD 1.000–2.000.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/es/audit/" class="inline-flex items-center justify-center px-5 py-2.5 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
@@ -95,6 +99,14 @@ const services = [
             Sistemas hechos a medida, APIs e integraciones con las herramientas que ya usás (ERP, CRM, legacy). Pagos y suscripciones con Stripe.
           </p>
           <a href="/es/case-studies/listing-los-cabos/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver un rescate + build →</a>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <Icon name="code" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Desarrollo de Software a Medida</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Aplicaciones web full-stack a medida. React, Next.js, Node.js, Laravel. Precio definido tras una llamada de scoping.
+          </p>
+          <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Reservar llamada de scoping →</a>
         </div>
       </div>
     </div>
@@ -150,17 +162,43 @@ const services = [
     </div>
   </section>
 
-  <!-- Lead -->
+  <!-- Testear -->
   <section class="py-12 md:py-16">
     <div class="mx-auto max-w-4xl px-6">
-      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Lead (Liderar)</h2>
-      <div class="p-6 border border-[var(--border)] rounded-lg max-w-2xl">
-        <Icon name="compass" class="mb-4" />
-        <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">CTO Fraccionario</h3>
-        <p class="text-sm text-[var(--text-secondary)] mb-4">
-          Liderazgo técnico sin contratar un CTO full-time: roadmap, decisiones de arquitectura, coordinación de equipo y hiring. Lideramos sistemas críticos durante años — incluyendo los de un gobierno de ciudad.
-        </p>
-        <a href="/es/case-studies/government-systems/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Ver el trabajo de gobierno →</a>
+      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Testear</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Auditoría QA y Riesgo de Release</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            5 a 7 días hábiles. Revisión de suite, pipeline y flujos críticos sin cobertura. Mapa de riesgos y plan priorizado — se acredita si contratan la suite.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 1.200</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Critical Flows Suite</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            3 a 4 semanas. Suite Playwright de 3 a 5 flujos críticos, integrada al CI como quality gate para verificar cada deploy.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 2.000</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">QA Retainer</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Mantenimiento de la suite, control de flakiness y tests para cada nueva feature. Hasta 40 horas por mes.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 1.200/mes</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Contractor</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Desarrollo y/o QA, part-time o full-time — escalás según necesidad.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 25/h</p>
+        </div>
       </div>
     </div>
   </section>
@@ -169,7 +207,7 @@ const services = [
   <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
     <div class="mx-auto max-w-2xl px-6 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">¿No sabés por dónde empezar?</h2>
-      <p class="mb-8 opacity-95">Reservá una llamada de 30 minutos. Juntos vemos si necesitás una auditoría, un rescate o alguien que lidere.</p>
+      <p class="mb-8 opacity-95">Agendá una llamada de 30 minutos. Vemos si necesitás una auditoría, un build o cobertura de QA.</p>
       <a href="/es/contact/" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
         Hablemos
       </a>

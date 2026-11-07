@@ -6,17 +6,21 @@ import JsonLd from '../../components/seo/JsonLd.astro';
 import Icon from '../../components/ui/Icon.astro';
 
 const title = 'Services';
-const description = 'Technical audits, project rescue, fractional CTO, custom software, embedded analytics, QA automation and applied AI for B2B growth-stage companies.';
+const description = 'Software development, QA automation, architecture audits, project rescue, embedded analytics and applied AI for growing B2B teams.';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 
 const services = [
-  { name: 'Architecture & Technical Debt Audit', serviceType: 'Software audit', description: 'A two-week, fixed-scope review of architecture, security, testing, CI/CD, dependencies and scalability, with a prioritized roadmap.' },
+  { name: 'Architecture & Technical Debt Audit', serviceType: 'Software audit', description: 'A two-week, fixed-scope review of architecture, security, testing, CI/CD, dependencies and scalability, with a prioritized roadmap. USD 1,000–2,000.' },
   { name: 'Project Rescue', serviceType: 'Software development', description: 'Take over half-built or abandoned software, recover code and account ownership, and ship to production.' },
-  { name: 'Fractional CTO', serviceType: 'Technology leadership', description: 'Technical leadership without a full-time hire: roadmap, architecture decisions, team coordination and hiring.' },
   { name: 'Custom Software & Integrations', serviceType: 'Software development', description: 'Bespoke systems, APIs, integrations (ERP, CRM, legacy) and payments with Stripe.' },
   { name: 'Embedded Analytics & BI', serviceType: 'Business intelligence', description: 'Dashboards inside your product with per-customer isolation (Apache Superset, BigQuery) and automated reports.' },
   { name: 'QA Automation & Release Confidence', serviceType: 'Quality assurance', description: 'Testing from zero, E2E with Playwright and post-deploy quality gates.' },
+  { name: 'QA & Release Risk Audit', serviceType: 'Quality assurance', description: '5–7 business days. Review of test suite, pipeline and uncovered critical flows. Risk map + prioritized test plan. USD 1,200, credited toward Critical Flows Suite.' },
+  { name: 'Critical Flows Suite', serviceType: 'Quality assurance', description: '3–4 weeks. Playwright E2E for 3–5 critical flows, wired into CI as a quality gate. USD 2,000.' },
+  { name: 'QA Retainer', serviceType: 'Quality assurance', description: 'Suite maintenance, flakiness control and new-feature tests. Up to 40 hours/month. USD 1,200/mo.' },
+  { name: 'Contractor', serviceType: 'Software development', description: 'Development and/or QA, part-time or full-time. USD 25/h.' },
+  { name: 'Custom Software Development', serviceType: 'Software development', description: 'Full-stack web applications built to spec. React, Next.js, Node, Laravel. Price upon scoping.' },
   { name: 'Applied AI', serviceType: 'Artificial intelligence', description: 'Data agents, assistants and document parsing, only when they add real value.' },
 ];
 ---
@@ -47,7 +51,7 @@ const services = [
         What we do
       </h1>
       <p class="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-        We build, connect and clarify software for companies that have outgrown their systems. Start with a fixed-scope audit, then build or lead from there.
+        Software development and QA automation for growing teams. We rescue half-built projects, audit technical debt, and make sure releases stop being a gamble.
       </p>
     </div>
   </section>
@@ -61,7 +65,7 @@ const services = [
           Architecture & Technical Debt Audit
         </h2>
         <p class="text-[var(--text-secondary)] mb-6 max-w-2xl">
-          Two weeks, fixed scope. We review architecture, security, tests, CI/CD, dependencies, scalability and multi-tenancy, and hand you a prioritized roadmap. USD 4,000–6,000, credited toward a follow-up engagement.
+          Two weeks, fixed scope. We review architecture, security, tests, CI/CD, dependencies, scalability and multi-tenancy, and hand you a prioritized roadmap. USD 1,000–2,000.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/audit/" class="inline-flex items-center justify-center px-5 py-2.5 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors">
@@ -95,6 +99,14 @@ const services = [
             Systems built to measure, APIs, and integrations with the tools you already use (ERP, CRM, legacy). Payments and subscriptions with Stripe.
           </p>
           <a href="/case-studies/listing-los-cabos/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">See a rescue + build →</a>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg bg-[var(--bg)]">
+          <Icon name="code" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Custom Software Development</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Full-stack web applications built to your spec. React, Next.js, Node.js, Laravel. We scope the project first — price defined after a discovery call.
+          </p>
+          <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">Book a scoping call →</a>
         </div>
       </div>
     </div>
@@ -150,17 +162,43 @@ const services = [
     </div>
   </section>
 
-  <!-- Lead -->
+  <!-- Test -->
   <section class="py-12 md:py-16">
     <div class="mx-auto max-w-4xl px-6">
-      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Lead</h2>
-      <div class="p-6 border border-[var(--border)] rounded-lg max-w-2xl">
-        <Icon name="compass" class="mb-4" />
-        <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Fractional CTO</h3>
-        <p class="text-sm text-[var(--text-secondary)] mb-4">
-          Technical leadership without hiring a full-time CTO: roadmap, architecture decisions, team coordination and hiring. We've led critical systems for years — including a city government's.
-        </p>
-        <a href="/case-studies/government-systems/" class="text-sm font-semibold text-[var(--color-primary-600)] hover:underline">See the government work →</a>
+      <h2 class="text-sm font-bold uppercase tracking-wide text-[var(--color-primary-600)] mb-8">Test</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">QA & Release Risk Audit</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            5–7 business days. Review of your test suite, pipeline and uncovered critical flows. Risk map and prioritized test plan — credited toward the Critical Flows Suite.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 1,200</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Critical Flows Suite</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            3–4 weeks. Playwright E2E for 3–5 revenue-critical flows, wired into your CI as a quality gate so every deploy is verified.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 2,000</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">QA Retainer</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Suite maintenance, flakiness control and tests for every new feature. Up to 40 hours per month.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 1,200/mo</p>
+        </div>
+        <div class="p-6 border border-[var(--border)] rounded-lg">
+          <Icon name="shield-check" class="mb-4" />
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Contractor</h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Development and/or QA, part-time or full-time — scale up or down as needed.
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-primary-600)]">USD 25/h</p>
+        </div>
       </div>
     </div>
   </section>
@@ -169,7 +207,7 @@ const services = [
   <section class="py-16 md:py-20 bg-[var(--color-primary-600)] text-white">
     <div class="mx-auto max-w-2xl px-6 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">Not sure where to start?</h2>
-      <p class="mb-8 opacity-95">Book a 30-minute call. We'll figure out whether you need an audit, a rescue, or someone to lead.</p>
+      <p class="mb-8 opacity-95">Book a 30-minute call. We'll figure out whether you need an audit, a build, or QA coverage.</p>
       <a href="/contact/" class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--bg)] transition-colors">
         Get in touch
       </a>

@@ -5,8 +5,8 @@ import Footer from '../../components/layout/Footer.astro';
 import JsonLd from '../../components/seo/JsonLd.astro';
 import Icon from '../../components/ui/Icon.astro';
 
-const title = 'Auditorías Técnicas y Rescate de Software';
-const description = 'Tu empresa creció. Tus sistemas no. Auditamos deuda técnica, rescatamos proyectos estancados y proporcionamos liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.';
+const title = 'Desarrollo de Software y QA Automation';
+const description = 'CALCIO construye software y automatiza pruebas para equipos en crecimiento. Rescatamos proyectos incompletos, auditamos deuda técnica y nos aseguramos de que los releases dejen de ser una apuesta.';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
@@ -19,7 +19,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         name: 'CALCIO',
         url: `${siteUrl}/es/`,
         description:
-          'Auditorías técnicas, rescate de proyectos y liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.',
+          'Desarrollo de software y QA automation para equipos B2B en crecimiento. Rescate de proyectos, auditorías de arquitectura, suites E2E con Playwright y cobertura QA continua.',
         logo: `${siteUrl}/logos/calcio-logo.png`,
         sameAs: ['https://www.linkedin.com/company/calcio-dev-llc'],
         areaServed: ['Estados Unidos', 'Latinoamérica'],
@@ -27,7 +27,6 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           'Auditoría de arquitectura de software',
           'Deuda técnica',
           'Rescate de proyectos',
-          'CTO fraccionario',
           'Desarrollo de software a medida',
           'Analytics embebido',
           'Automatización de QA',
@@ -43,8 +42,8 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           name: 'Auditoría de Arquitectura & Deuda Técnica',
           description: 'Auditoría técnica de dos semanas y alcance fijo con un roadmap priorizado.',
           priceCurrency: 'USD',
-          minPrice: 4000,
-          maxPrice: 6000,
+          minPrice: 1000,
+          maxPrice: 2000,
           url: `${siteUrl}/es/audit/`,
         },
       }}
@@ -64,14 +63,14 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       <div class="max-w-xl">
         <div class="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-medium text-white/70 backdrop-blur-sm">
           <span class="mr-2 flex h-2 w-2 rounded-full bg-[var(--color-primary-400)]"></span>
-          Auditorías técnicas · Rescate de proyectos · CTO fraccionario
+          Desarrollo de software · QA automation · Rescate de proyectos
         </div>
         <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
-          Tu empresa creció.<br />
-          <span class="bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-accent-400)] bg-clip-text text-transparent">Tus sistemas no.</span>
+          Construilo bien.<br />
+          <span class="bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-accent-400)] bg-clip-text text-transparent">Shippealo con confianza.</span>
         </h1>
         <p class="text-lg md:text-xl text-white/75 mb-8 max-w-lg">
-          Rescatamos infraestructura inestable, auditamos deuda técnica y proporcionamos liderazgo de CTO fraccionario para empresas B2B en etapa de crecimiento.
+          CALCIO construye software y automatiza pruebas para equipos en crecimiento. Rescatamos proyectos incompletos, auditamos deuda técnica y nos aseguramos de que los releases dejen de ser una apuesta.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a
@@ -165,6 +164,13 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
               <p class="text-sm text-[var(--text-secondary)]">Tomar un proyecto estancado, recuperar control del código e infraestructura, hacer ship a producción.</p>
             </div>
           </div>
+          <div class="flex gap-4">
+            <Icon name="code" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Desarrollo de Software a Medida</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Apps web full-stack, React, Next.js, Node, Laravel. Alcance y precio definidos después de una llamada de discovery.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -176,6 +182,40 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automatización & Integraciones</h4>
               <p class="text-sm text-[var(--text-secondary)]">Procesos que se ejecutan solos: bots de WhatsApp y Manychat, Apps Script, integraciones de herramientas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Testear</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex gap-4">
+            <Icon name="shield-check" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Auditoría QA y Riesgo de Release</h4>
+              <p class="text-sm text-[var(--text-secondary)]">5 a 7 días hábiles. Revisión de suite, pipeline y flujos críticos sin cobertura. Mapa de riesgos + plan de tests priorizado — se acredita si contratan la suite.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <Icon name="shield-check" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Critical Flows Suite</h4>
+              <p class="text-sm text-[var(--text-secondary)]">3 a 4 semanas. Suite Playwright de 3 a 5 flujos críticos (checkout, pagos, login, permisos), integrada al CI como quality gate.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <Icon name="shield-check" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA Retainer</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Mantenimiento de la suite, control de flakiness y cobertura de nuevas features. Hasta 40 h/mes.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <Icon name="shield-check" />
+            <div>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Contractor</h4>
+              <p class="text-sm text-[var(--text-secondary)]">Desarrollo y/o QA, part-time o full-time.</p>
             </div>
           </div>
         </div>
@@ -201,17 +241,6 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         </div>
       </div>
 
-      <div class="mb-16">
-        <h3 class="text-xl font-bold text-[var(--color-primary-600)] mb-6">Lead (Liderar)</h3>
-        <div class="flex gap-4">
-          <Icon name="compass" />
-          <div>
-            <h4 class="font-semibold text-[var(--text-primary)] mb-2">CTO Fraccionario</h4>
-            <p class="text-sm text-[var(--text-secondary)]">Liderazgo técnico sin contratar tiempo completo. Roadmap, decisiones de arquitectura, coordinación de equipo, hiring.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="text-center">
         <a href="/es/services/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
           Ver todos los servicios →
@@ -220,42 +249,51 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
     </div>
   </section>
 
-  <!-- Anchor Offer -->
+  <!-- Anchor Offers -->
   <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-2xl px-6 border border-[var(--border)] rounded-lg p-8 md:p-12 bg-[var(--bg-secondary)]">
-      <h2 class="text-3xl font-bold text-[var(--text-primary)] mb-6">
-        Auditoría de Arquitectura & Deuda Técnica
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-10 text-center">
+        Empezá con un alcance fijo
       </h2>
-      <p class="text-[var(--text-secondary)] mb-8">
-        Dos semanas. Alcance fijo. Un mapa completo de qué está roto y un roadmap priorizado para arreglarlo.
-      </p>
+      <div class="grid md:grid-cols-2 gap-6">
 
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <div>
-          <p class="text-sm text-[var(--text-tertiary)] mb-1">Inversión</p>
-          <p class="text-3xl font-bold text-[var(--color-primary-600)]">USD 4.000–6.000</p>
-          <p class="text-xs text-[var(--text-tertiary)] mt-2">Acreditado hacia un engagement futuro</p>
+        <div class="border-2 border-[var(--color-primary-600)] rounded-lg p-8">
+          <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">Auditoría de arquitectura</span>
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mt-2 mb-3">
+            Auditoría de Arquitectura y Deuda Técnica
+          </h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Dos semanas, alcance fijo. Revisamos arquitectura, seguridad, tests, CI/CD, dependencias y escalabilidad. Te llevás un roadmap priorizado.
+          </p>
+          <p class="text-2xl font-bold text-[var(--color-primary-600)] mb-6">USD 1.000–2.000</p>
+          <a
+            href="/es/audit/"
+            class="inline-flex items-center justify-center px-5 py-2.5 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors w-full text-center"
+          >
+            Ver la Auditoría
+          </a>
         </div>
-        <div>
-          <p class="text-sm text-[var(--text-tertiary)] mb-1">Revisamos</p>
-          <ul class="text-sm text-[var(--text-primary)] space-y-1">
-            <li>• Arquitectura & escalabilidad</li>
-            <li>• Seguridad (auth, reglas BaaS, secrets)</li>
-            <li>• Testing & CI/CD</li>
-            <li>• Dependencias & riesgo de upgrade</li>
-            <li>• Multi-tenancy & aislamiento</li>
-          </ul>
+
+        <div class="border border-[var(--border)] rounded-lg p-8">
+          <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">QA automation</span>
+          <h3 class="text-xl font-bold text-[var(--text-primary)] mt-2 mb-3">
+            Critical Flows Suite
+          </h3>
+          <p class="text-sm text-[var(--text-secondary)] mb-4">
+            Tests E2E con Playwright para checkout, pagos, login y permisos — integrados al CI como quality gate. Alcance fijo, 3 a 4 semanas.
+          </p>
+          <p class="text-2xl font-bold text-[var(--color-primary-600)] mb-6">USD 2.000</p>
+          <a
+            href="https://calendly.com/juanmanuelzaragoza/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-5 py-2.5 border border-[var(--color-primary-600)] text-[var(--color-primary-600)] font-semibold rounded-lg hover:bg-[var(--color-primary-600)]/10 transition-colors w-full text-center"
+          >
+            Reservar una llamada
+          </a>
         </div>
+
       </div>
-
-      <a
-        href="https://calendly.com/juanmanuelzaragoza/30min"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-700)] transition-colors w-full md:w-auto text-center"
-      >
-        Comenzar Auditoría
-      </a>
     </div>
   </section>
 
@@ -384,7 +422,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary-600)] text-white font-bold mx-auto mb-4">
             3
           </div>
-          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Build o CTO fraccionario</h3>
+          <h3 class="font-semibold text-[var(--text-primary)] mb-2">Build o cobertura QA</h3>
           <p class="text-sm text-[var(--text-secondary)]">Updates semanales. Progreso transparente. Cambios de alcance por escrito.</p>
         </div>
 
@@ -473,7 +511,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <span class="group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-[var(--text-secondary)] mt-4 text-sm">
-            Fijo: USD 4.000–6.000 para una auditoría de 2 semanas, dependiendo del tamaño y complejidad de tu codebase. La tarifa se acredita hacia cualquier engagement futuro.
+            Fijo: USD 1.000–2.000 para una auditoría de 2 semanas, dependiendo del tamaño y complejidad de tu codebase. La tarifa se acredita hacia cualquier engagement futuro.
           </p>
         </details>
 
