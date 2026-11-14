@@ -1,6 +1,6 @@
 ---
-title: 'Datakimia: A Multi-Tenant Data Platform Where Every Client Sees Only Their Data'
-description: 'We built Datakimia, a multi-tenant B2B data platform — NestJS, SSO, embedded Superset with per-client isolation — plus a major Superset migration.'
+title: 'Multi-tenant B2B Data Platform: Every Client Sees Only Their Data'
+description: 'Embedded Apache Superset with per-client data isolation for Datakimia. AI data agents, SSO, RBAC and a 3-major-version Superset migration completed in 30 days.'
 pubDate: 2025-05-10
 heroImage: ../../../assets/case-studies/data-platform.webp
 client: 'Datakimia'
@@ -21,23 +21,47 @@ draft: false
 
 ## Context
 
-Datakimia, a B2B data platform, needed to give each of its customers a view of their own data — dashboards, reports, and AI data agents — without building a separate report for every client.
+Datakimia is a B2B SaaS company that gives each of its clients access to their own operational analytics. As the platform grew, two problems became urgent: multi-tenant data isolation at scale, and a heavily customized Apache Superset fork that was falling further behind the upstream releases.
 
-## The problem
+## The Problem
 
-Serving analytics to multiple business customers from one platform means strict isolation: every client must see only their data, and nobody else's. Doing that while keeping a shared, upgradable infrastructure is where most teams get stuck.
+**1. No scalable multi-tenancy.** Each client required a manually configured report or dashboard. As the client list grew, so did the manual overhead — and there was no enforcement of data boundaries between clients at the row level, creating security risk.
 
-## What we did
+**2. A stuck BI fork.** Datakimia ran a customized fork of Apache Superset with features not available in the upstream release. The fork was three major versions behind (4.1, while upstream was at 6.1), leaving the platform exposed to unpatched security issues and incompatible with newer integrations.
 
-- Built the **backend in NestJS** (in production since May 2024), with Next.js on the front end and PostgreSQL underneath.
-- Added **SSO with several corporate providers** and role-based access control (RBAC).
-- Embedded **Apache Superset with per-client isolation**, plus AI data agents.
-- Ran a **major migration of the Superset fork** — three major versions (4.1 → 6.1) in 30 days. Automated checks caught three features that would otherwise have been silently lost across ~4,400 merged files.
+## What We Did
+
+We worked on two tracks in parallel.
+
+**Multi-tenant backend — built from scratch, in production since May 2024:**
+- Enterprise single sign-on (SSO) supporting multiple corporate identity providers
+- Role-based access control (RBAC) at both application and data layer
+- Apache Superset embedded dashboards with per-client isolation using guest tokens and row-level security (RLS) — no client sees another client's data
+- AI data agents: natural-language queries over each client's own data, with guardrails to prevent cross-client data access
+- PostgreSQL with per-tenant data boundaries; BigQuery for analytical workloads at scale
+- Deployed on Google Cloud with Kubernetes
+
+**Superset fork migration — 3 major versions in 30 days:**
+- Automated regression testing to catch features silently lost during each upgrade step
+- Merged ~4,400 files across three major versions: Superset 4.1 → 5.x → 6.1
+- Caught 3 features with no upstream test coverage that would have broken silently in production
+- Reached the current upstream release with all custom functionality intact
 
 ## Result
 
-Three isolated production tenants, each seeing only their own data, on a platform that can still be upgraded safely.
+Each Datakimia client now has a secure, self-service analytics environment inside the product — without manual configuration per client and without risk of seeing another tenant's data.
+
+The BI platform is current again. Maintenance overhead dropped: new tenants provision isolated dashboards automatically, and the upgrade gap no longer accumulates.
 
 ## Stack
 
-NestJS · Next.js · PostgreSQL · Apache Superset · SSO · RBAC
+NestJS · Next.js · PostgreSQL · Apache Superset · Google Cloud · BigQuery · Kubernetes
+
+## Metrics
+
+| | |
+|---|---|
+| **3** major Superset versions upgraded | in 30 days (Superset 4.1 → 6.1) |
+| **~4,400** files merged | across the fork migration |
+| **3** silently-lost features caught | by automated regression checks |
+| **3** isolated production tenants | at launch |
