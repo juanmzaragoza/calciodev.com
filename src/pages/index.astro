@@ -6,7 +6,8 @@ import JsonLd from '../components/seo/JsonLd.astro';
 import Icon from '../components/ui/Icon.astro';
 
 const title = 'Software Development & QA Automation for Growing Teams | CALCIO';
-const description = 'CALCIO is a nearshore software development and QA automation team. Playwright E2E test suites, architecture audits and project rescue for B2B SaaS teams — remote, US time zones.';
+const description =
+  'CALCIO is a nearshore software development and QA automation team. Playwright E2E test suites, architecture audits and project rescue for B2B SaaS teams — remote, US time zones.';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.com';
 ---
@@ -56,7 +57,8 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           },
           {
             name: 'QA & Release Risk Audit',
-            description: 'Fixed-scope review of test suite, pipeline and critical flows. Risk map + prioritized test plan.',
+            description:
+              'Fixed-scope review of test suite, pipeline and critical flows. Risk map + prioritized test plan.',
             priceCurrency: 'USD',
             url: `${siteUrl}/services/`,
           },
@@ -93,11 +95,15 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           Software development · QA automation · Project rescue
         </div>
         <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
-          Build it right.<br />
-          <span class="bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-accent-400)] bg-clip-text text-transparent">Ship it with confidence.</span>
+          Build it right.
+          <br />
+          <span class="bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-accent-400)] bg-clip-text text-transparent">
+            Ship it with confidence.
+          </span>
         </h1>
         <p class="text-lg md:text-xl text-white/75 mb-8 max-w-lg">
-          CALCIO builds software and delivers test automation for growing teams. We rescue half-built projects, audit technical debt, and make sure releases stop being a gamble.
+          CALCIO builds software and delivers test automation for growing teams. We rescue
+          half-built projects, audit technical debt, and make sure releases stop being a gamble.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a
@@ -127,10 +133,30 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       </p>
       <div class="mx-auto max-w-4xl rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm md:p-8">
         <div class="grid grid-cols-2 items-center gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
-          <img src="/logos/clients/datakimia.webp" alt="Datakimia" loading="lazy" class="mx-auto max-h-8 w-auto max-w-[130px] object-contain" />
-          <img src="/logos/clients/gcba.webp" alt="Buenos Aires Ciudad" loading="lazy" class="mx-auto max-h-10 w-auto max-w-[120px] object-contain" />
-          <img src="/logos/clients/casa-domo.webp" alt="Casa Domo" loading="lazy" class="mx-auto max-h-9 w-auto max-w-[130px] object-contain" />
-          <img src="/logos/clients/guruxy.webp" alt="Guruxy" loading="lazy" class="mx-auto max-h-8 w-auto max-w-[130px] object-contain" />
+          <img
+            src="/logos/clients/datakimia.webp"
+            alt="Datakimia"
+            loading="lazy"
+            class="mx-auto max-h-8 w-auto max-w-[130px] object-contain"
+          />
+          <img
+            src="/logos/clients/gcba.webp"
+            alt="Buenos Aires Ciudad"
+            loading="lazy"
+            class="mx-auto max-h-10 w-auto max-w-[120px] object-contain"
+          />
+          <img
+            src="/logos/clients/casa-domo.webp"
+            alt="Casa Domo"
+            loading="lazy"
+            class="mx-auto max-h-9 w-auto max-w-[130px] object-contain"
+          />
+          <img
+            src="/logos/clients/guruxy.webp"
+            alt="Guruxy"
+            loading="lazy"
+            class="mx-auto max-h-8 w-auto max-w-[130px] object-contain"
+          />
         </div>
       </div>
     </div>
@@ -146,22 +172,32 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         <div class="p-6 border border-[var(--border)] rounded-lg">
           <Icon name="ghost" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">The previous developer left</p>
-          <p class="text-[var(--text-secondary)] text-sm">and the project is half-built, with no one who understands the architecture.</p>
+          <p class="text-[var(--text-secondary)] text-sm">
+            and the project is half-built, with no one who understands the architecture.
+          </p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
           <Icon name="lock" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">We don't own our code</p>
-          <p class="text-[var(--text-secondary)] text-sm">The previous vendor locked us out. We need control of our infrastructure.</p>
+          <p class="text-[var(--text-secondary)] text-sm">
+            The previous vendor locked us out. We need control of our infrastructure.
+          </p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
           <Icon name="dice-5" class="mb-4" />
           <p class="text-[var(--text-primary)] font-semibold mb-2">Every release is a gamble</p>
-          <p class="text-[var(--text-secondary)] text-sm">No tests, no CI/CD, manual deployments. We're afraid to ship.</p>
+          <p class="text-[var(--text-secondary)] text-sm">
+            No tests, no CI/CD, manual deployments. We're afraid to ship.
+          </p>
         </div>
         <div class="p-6 border border-[var(--border)] rounded-lg">
           <Icon name="map" class="mb-4" />
-          <p class="text-[var(--text-primary)] font-semibold mb-2">We need to scale, but first...</p>
-          <p class="text-[var(--text-secondary)] text-sm">we need to know what's broken. We need a roadmap, not a rewrite.</p>
+          <p class="text-[var(--text-primary)] font-semibold mb-2">
+            We need to scale, but first...
+          </p>
+          <p class="text-[var(--text-secondary)] text-sm">
+            we need to know what's broken. We need a roadmap, not a rewrite.
+          </p>
         </div>
       </div>
     </div>
@@ -180,22 +216,35 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           <div class="flex gap-4">
             <Icon name="code" />
             <div>
-              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Custom Software & Integrations</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Systems to measure, APIs, integrations with existing tools (ERP, CRM, legacy), payments with Stripe.</p>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">
+                Custom Software & Integrations
+              </h4>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Systems to measure, APIs, integrations with existing tools (ERP, CRM, legacy),
+                payments with Stripe.
+              </p>
             </div>
           </div>
           <div class="flex gap-4">
             <Icon name="life-buoy" />
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">Project Rescue</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Take over a stalled project, recover code ownership and infrastructure control, ship to production.</p>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Take over a stalled project, recover code ownership and infrastructure control, ship
+                to production.
+              </p>
             </div>
           </div>
           <div class="flex gap-4">
             <Icon name="code" />
             <div>
-              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Custom Software Development</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Full-stack web apps, React, Next.js, Node, Laravel. Scope and price defined after a discovery call.</p>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">
+                Custom Software Development
+              </h4>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Full-stack web apps, React, Next.js, Node, Laravel. Scope and price defined after a
+                discovery call.
+              </p>
             </div>
           </div>
         </div>
@@ -207,8 +256,13 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           <div class="flex gap-4">
             <Icon name="workflow" />
             <div>
-              <h4 class="font-semibold text-[var(--text-primary)] mb-2">Automation & Integrations</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Processes that run on their own: WhatsApp and Manychat bots, Apps Script, tool integrations.</p>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">
+                Automation & Integrations
+              </h4>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Processes that run on their own: WhatsApp and Manychat bots, Apps Script, tool
+                integrations.
+              </p>
             </div>
           </div>
         </div>
@@ -221,28 +275,38 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <Icon name="shield-check" />
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA & Release Risk Audit</h4>
-              <p class="text-sm text-[var(--text-secondary)]">5–7 business days. Review of your test suite, pipeline and uncovered critical flows. Risk map + prioritized test plan — credited toward the Critical Flows Suite.</p>
+              <p class="text-sm text-[var(--text-secondary)]">
+                5–7 business days. Review of your test suite, pipeline and uncovered critical flows.
+                Risk map + prioritized test plan — credited toward the Critical Flows Suite.
+              </p>
             </div>
           </div>
           <div class="flex gap-4">
             <Icon name="shield-check" />
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">Critical Flows Suite</h4>
-              <p class="text-sm text-[var(--text-secondary)]">3–4 weeks. Playwright E2E for 3–5 revenue-critical flows (checkout, payments, login, permissions), wired into CI as a quality gate.</p>
+              <p class="text-sm text-[var(--text-secondary)]">
+                3–4 weeks. Playwright E2E for 3–5 revenue-critical flows (checkout, payments, login,
+                permissions), wired into CI as a quality gate.
+              </p>
             </div>
           </div>
           <div class="flex gap-4">
             <Icon name="shield-check" />
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA Retainer</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Suite maintenance, flakiness control and new-feature tests. Up to 40 hours/month.</p>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Suite maintenance, flakiness control and new-feature tests. Up to 40 hours/month.
+              </p>
             </div>
           </div>
           <div class="flex gap-4">
             <Icon name="shield-check" />
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">Contractor</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Development and/or QA, part-time or full-time.</p>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Development and/or QA, part-time or full-time.
+              </p>
             </div>
           </div>
         </div>
@@ -255,21 +319,32 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <Icon name="bar-chart-3" />
             <div>
               <h4 class="font-semibold text-[var(--text-primary)] mb-2">Embedded Analytics & BI</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Dashboards inside your product, with per-customer isolation. BigQuery, Superset, automated reports.</p>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Dashboards inside your product, with per-customer isolation. BigQuery, Superset,
+                automated reports.
+              </p>
             </div>
           </div>
           <div class="flex gap-4">
             <Icon name="shield-check" />
             <div>
-              <h4 class="font-semibold text-[var(--text-primary)] mb-2">QA Automation & Release Confidence</h4>
-              <p class="text-sm text-[var(--text-secondary)]">Testing strategy from zero. E2E with Playwright, quality gates post-deploy, fewer surprises.</p>
+              <h4 class="font-semibold text-[var(--text-primary)] mb-2">
+                QA Automation & Release Confidence
+              </h4>
+              <p class="text-sm text-[var(--text-secondary)]">
+                Testing strategy from zero. E2E with Playwright, quality gates post-deploy, fewer
+                surprises.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="text-center">
-        <a href="/services/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
+        <a
+          href="/services/"
+          class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline"
+        >
           View all services →
         </a>
       </div>
@@ -283,15 +358,17 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         Start with a fixed-scope engagement
       </h2>
       <div class="grid md:grid-cols-2 gap-6">
-
         <!-- Architecture Audit -->
         <div class="border-2 border-[var(--color-primary-600)] rounded-lg p-8">
-          <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">Architecture audit</span>
+          <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">
+            Architecture audit
+          </span>
           <h3 class="text-xl font-bold text-[var(--text-primary)] mt-2 mb-3">
             Architecture &amp; Technical Debt Audit
           </h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
-            Two weeks, fixed scope. We review architecture, security, tests, CI/CD, dependencies and scalability. You get a prioritized roadmap.
+            Two weeks, fixed scope. We review architecture, security, tests, CI/CD, dependencies and
+            scalability. You get a prioritized roadmap.
           </p>
           <p class="text-2xl font-bold text-[var(--color-primary-600)] mb-6">USD 1,000–2,000</p>
           <a
@@ -304,12 +381,15 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
 
         <!-- Critical Flows Suite -->
         <div class="border border-[var(--border)] rounded-lg p-8">
-          <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">QA automation</span>
+          <span class="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">
+            QA automation
+          </span>
           <h3 class="text-xl font-bold text-[var(--text-primary)] mt-2 mb-3">
             Critical Flows Suite
           </h3>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
-            Playwright E2E for 3–5 critical flows — checkout, payments, login, permissions — wired into your CI as a quality gate. Fixed scope, 3–4 weeks.
+            Playwright E2E for 3–5 critical flows — checkout, payments, login, permissions — wired
+            into your CI as a quality gate. Fixed scope, 3–4 weeks.
           </p>
           <p class="text-2xl font-bold text-[var(--color-primary-600)] mb-6">USD 2,000</p>
           <a
@@ -321,7 +401,6 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             Book a call
           </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -335,15 +414,21 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
 
       <div class="grid md:grid-cols-2 gap-8 mb-12">
         <!-- Listing Los Cabos -->
-        <a href="/case-studies/listing-los-cabos/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+        <a
+          href="/case-studies/listing-los-cabos/"
+          class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors"
+        >
           <div class="flex items-start justify-between mb-4">
             <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
               Listing Los Cabos
             </h3>
-            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Real Estate</span>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">
+              Real Estate
+            </span>
           </div>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
-            Rescued a half-built React + Firebase platform, added Stripe subscriptions and security, now serving 2 cities from one codebase.
+            Rescued a half-built React + Firebase platform, added Stripe subscriptions and security,
+            now serving 2 cities from one codebase.
           </p>
           <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
             <span>6 months to production</span>
@@ -355,15 +440,21 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         </a>
 
         <!-- Ticketing Platform -->
-        <a href="/case-studies/ticketing-platform/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+        <a
+          href="/case-studies/ticketing-platform/"
+          class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors"
+        >
           <div class="flex items-start justify-between mb-4">
             <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
               High-Volume Ticketing
             </h3>
-            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">QA</span>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">
+              QA
+            </span>
           </div>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
-            Built a testing strategy from zero: E2E with Playwright, backend integration tests, and automated gates. Releases went from days to minutes.
+            Built a testing strategy from zero: E2E with Playwright, backend integration tests, and
+            automated gates. Releases went from days to minutes.
           </p>
           <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
             <span>91 E2E tests</span>
@@ -375,15 +466,21 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         </a>
 
         <!-- Data Platform -->
-        <a href="/case-studies/data-platform/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+        <a
+          href="/case-studies/data-platform/"
+          class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors"
+        >
           <div class="flex items-start justify-between mb-4">
             <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
               Multi-Tenant Data Platform
             </h3>
-            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Analytics</span>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">
+              Analytics
+            </span>
           </div>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
-            Full-stack data platform with per-customer isolation, embedded Superset dashboards, and data agents. Every client sees only their data.
+            Full-stack data platform with per-customer isolation, embedded Superset dashboards, and
+            data agents. Every client sees only their data.
           </p>
           <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
             <span>3 Superset upgrades in 30 days</span>
@@ -395,15 +492,21 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
         </a>
 
         <!-- Government -->
-        <a href="/case-studies/government-systems/" class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors">
+        <a
+          href="/case-studies/government-systems/"
+          class="group p-6 border border-[var(--border)] rounded-lg hover:bg-[var(--bg)] transition-colors"
+        >
           <div class="flex items-start justify-between mb-4">
             <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary-600)]">
               City-Wide Government Systems
             </h3>
-            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">Leadership</span>
+            <span class="text-xs font-semibold text-[var(--color-primary-600)] bg-[var(--color-primary-600)]/10 px-2 py-1 rounded">
+              Leadership
+            </span>
           </div>
           <p class="text-sm text-[var(--text-secondary)] mb-4">
-            Technical lead for employee evaluation, medication dispensing, and civic participation systems serving tens of thousands of users.
+            Technical lead for employee evaluation, medication dispensing, and civic participation
+            systems serving tens of thousands of users.
           </p>
           <div class="flex gap-3 flex-wrap text-xs text-[var(--text-tertiary)]">
             <span>7 years</span>
@@ -416,7 +519,10 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
       </div>
 
       <div class="text-center">
-        <a href="/case-studies/" class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline">
+        <a
+          href="/case-studies/"
+          class="inline-flex items-center gap-2 text-[var(--color-primary-600)] font-semibold hover:underline"
+        >
           View all 6 cases →
         </a>
       </div>
@@ -436,7 +542,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             1
           </div>
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Free 30-min call</h3>
-          <p class="text-sm text-[var(--text-secondary)]">Understand your situation, constraints and goals.</p>
+          <p class="text-sm text-[var(--text-secondary)]">
+            Understand your situation, constraints and goals.
+          </p>
         </div>
 
         <div class="text-center">
@@ -444,7 +552,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             2
           </div>
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Fixed-scope audit</h3>
-          <p class="text-sm text-[var(--text-secondary)]">2 weeks, one deliverable, one price. A roadmap you can act on.</p>
+          <p class="text-sm text-[var(--text-secondary)]">
+            2 weeks, one deliverable, one price. A roadmap you can act on.
+          </p>
         </div>
 
         <div class="text-center">
@@ -452,7 +562,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             3
           </div>
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">Build or QA coverage</h3>
-          <p class="text-sm text-[var(--text-secondary)]">Weekly updates. Transparent progress. Scope changes in writing.</p>
+          <p class="text-sm text-[var(--text-secondary)]">
+            Weekly updates. Transparent progress. Scope changes in writing.
+          </p>
         </div>
 
         <div class="text-center">
@@ -460,7 +572,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             4
           </div>
           <h3 class="font-semibold text-[var(--text-primary)] mb-2">You own it</h3>
-          <p class="text-sm text-[var(--text-secondary)]">Code, infrastructure, accounts, documentation. All yours.</p>
+          <p class="text-sm text-[var(--text-secondary)]">
+            Code, infrastructure, accounts, documentation. All yours.
+          </p>
         </div>
       </div>
     </div>
@@ -471,7 +585,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
     <div class="mx-auto max-w-2xl px-6">
       <blockquote class="text-center">
         <p class="text-lg text-[var(--text-primary)] mb-6">
-          "Juan Manuel helped us overhaul our entire platform — from design to security to subscriptions. He not only resolved the existing issues but positioned the platform for future growth. We now have full control of a system that genuinely works."
+          "Juan Manuel helped us overhaul our entire platform — from design to security to
+          subscriptions. He not only resolved the existing issues but positioned the platform for
+          future growth. We now have full control of a system that genuinely works."
         </p>
         <div class="mt-6 flex items-center justify-center gap-3">
           <img
@@ -484,11 +600,18 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
           />
           <div class="text-left">
             <p class="font-semibold text-[var(--text-primary)]">Julio César Pérez</p>
-            <p class="text-sm text-[var(--text-tertiary)]">Project Leader · Listing Los Cabos, Mexico City</p>
+            <p class="text-sm text-[var(--text-tertiary)]">
+              Project Leader · Listing Los Cabos, Mexico City
+            </p>
           </div>
         </div>
         <p class="text-xs text-[var(--color-primary-600)] mt-4">
-          <a href="https://youtu.be/cTap4d1NMDY" target="_blank" rel="noopener noreferrer" class="hover:underline">
+          <a
+            href="https://youtu.be/cTap4d1NMDY"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:underline"
+          >
             Watch video →
           </a>
         </p>
@@ -510,7 +633,8 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <span class="group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-[var(--text-secondary)] mt-4 text-sm">
-            Yes. We operate in UTC-5 (equivalent to US Eastern Standard Time) and overlap with US business hours throughout the year.
+            Yes. We operate in UTC-5 (equivalent to US Eastern Standard Time) and overlap with US
+            business hours throughout the year.
           </p>
         </details>
 
@@ -520,7 +644,8 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <span class="group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-[var(--text-secondary)] mt-4 text-sm">
-            You do. You own all code, infrastructure, accounts, and documentation. We transfer everything to your control at the end of each engagement.
+            You do. You own all code, infrastructure, accounts, and documentation. We transfer
+            everything to your control at the end of each engagement.
           </p>
         </details>
 
@@ -530,7 +655,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <span class="group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-[var(--text-secondary)] mt-4 text-sm">
-            We work alongside your team. We can mentor, lead architecture decisions, or handle the critical path while your team handles parallel work. The audit clarifies what makes sense.
+            We work alongside your team. We can mentor, lead architecture decisions, or handle the
+            critical path while your team handles parallel work. The audit clarifies what makes
+            sense.
           </p>
         </details>
 
@@ -540,7 +667,8 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <span class="group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-[var(--text-secondary)] mt-4 text-sm">
-            Fixed: USD 1,000–2,000 for a 2-week audit, depending on your codebase size and complexity. The fee is credited toward any follow-up engagement.
+            Fixed: USD 1,000–2,000 for a 2-week audit, depending on your codebase size and
+            complexity. The fee is credited toward any follow-up engagement.
           </p>
         </details>
 
@@ -560,7 +688,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
             <span class="group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-[var(--text-secondary)] mt-4 text-sm">
-            We specialize in Node.js, Next.js, React, NestJS, Python, PostgreSQL, GCP and AWS, but we've worked with Laravel, Angular, Java, .NET and many other stacks. Tell us what you're using and we'll let you know.
+            We specialize in Node.js, Next.js, React, NestJS, Python, PostgreSQL, GCP and AWS, but
+            we've worked with Laravel, Angular, Java, .NET and many other stacks. Tell us what
+            you're using and we'll let you know.
           </p>
         </details>
       </div>
@@ -570,11 +700,10 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://calciodev.
   <!-- Final CTA -->
   <section class="py-16 md:py-24 bg-[var(--color-primary-600)] text-white">
     <div class="mx-auto max-w-2xl px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Ready to fix your systems?
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to fix your systems?</h2>
       <p class="text-lg mb-8 opacity-95">
-        Book a 30-minute technical assessment call. No pitch, no surprises — just a conversation about what's broken and what's possible.
+        Book a 30-minute technical assessment call. No pitch, no surprises — just a conversation
+        about what's broken and what's possible.
       </p>
       <a
         href="https://calendly.com/juanmanuelzaragoza/30min"

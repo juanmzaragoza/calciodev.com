@@ -9,6 +9,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://calciodev.com',
+  trailingSlash: 'always',
   output: 'static',
 
   i18n: {

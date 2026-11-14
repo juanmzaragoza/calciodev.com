@@ -37,7 +37,14 @@ const {
 
 const t = useTranslations(detectedLang);
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://astro-seo-theme.vercel.app';
-const currentUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).toString();
+
+function pathWithTrailingSlash(pathname: string): string {
+  if (pathname === '/') return '/';
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
+const canonicalPath = pathWithTrailingSlash(Astro.url.pathname);
+const currentUrl = canonicalUrl ?? new URL(canonicalPath, `${siteUrl}/`).toString();
 const ogImageUrl = new URL(image, siteUrl).toString();
 const siteName = 'CALCIO';
 const fullTitle = appendSiteName ? `${title} | ${siteName}` : title;
